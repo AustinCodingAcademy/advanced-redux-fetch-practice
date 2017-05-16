@@ -7,4 +7,10 @@ function mapStateToProps(state) {
   };
 }
 
+function mapDispatchToProps(){
+  return {
+    
+  }
+}
+
 export default connect(mapStateToProps)(Products);
