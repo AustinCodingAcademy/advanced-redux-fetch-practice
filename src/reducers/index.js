@@ -4,6 +4,71 @@ function comments(state = [], action) {
   return state;
 }
 
+export const PRODUCT_LOAD_START = "PRODUCT_LOAD_START";
+
+export function productLoadStart() {
+  return (dispatch) => {
+    dispatch({
+      type: PRODUCT_LOAD_START
+    });
+    fetch("http://localhost:4001/products").then((response) => {
+      console.log("Ivo Rocks", response);
+      return response.json();
+    }).then((data) => {
+      dispatch(productLoadSuccess(data));
+    })
+    .catch(() => {
+      dispatch(productLoadError());
+    });
+  };
+}
+
+
+export const PRODUCT_LOAD_ERROR = "PRODUCT_LOAD_ERROR";
+
+export function productLoadError() {
+
+}
+
+
+export const PRODUCT_LOAD_SUCCESS = "PRODUCT_LOAD_SUCCESS";
+
+export function productLoadSuccess() {
+
+}
+
+
+export const CONTACTS_LOAD_START = "CONTACTS_LOAD_START";
+
+export function contactsLoadStart() {
+  return (dispatch) => {
+    dispatch({
+      type: CONTACTS_LOAD_START
+    });
+    fetch("http://localhost:4001/contacts").then((response) => {
+      return response.json();
+    }).then((data) => {
+      dispatch(contactsLoadSuccess(data));
+    })
+    .catch(() => {
+      dispatch(contactsLoadError());
+    });
+  };
+}
+
+
+export const CONTACTS_LOAD_SUCCESS = "CONTACTS_LOAD_START";
+
+export function contactsLoadSuccess() {
+
+}
+
+export const CONTACTS_LOAD_ERROR = "CONTACTS_LOAD_ERROR";
+
+export function contactsLoadError() {
+
+}
+
 const rootReducer = combineReducers({
   comments
 });

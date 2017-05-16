@@ -1,5 +1,6 @@
 import { connect } from "react-redux";
 import Contacts from "../components/Contacts";
+import contactsLoadStart from "./reducers";
 
 function mapStateToProps(state) {
   return {
@@ -7,4 +8,14 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps)(Contacts);
+function mapDispatchToProps(dispatch) {
+  return {
+    onMountContacts: () => {
+      dispatch(contactsLoadStart());
+    }
+  };
+}
+
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(Contacts);
