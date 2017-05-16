@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import CollapsableMapper from "./CollapsableMapper";
+import PropTypes from "prop-types";
 
 class Contacts extends Component {
   contactWillMount() {
@@ -9,13 +10,16 @@ class Contacts extends Component {
   }
   render() {
     return (
-      <CollapsableMapper data={props.contacts} field="name" />
+      <CollapsableMapper data={this.props.contacts} field="name" />
     );
   }
 }
 
 
-
+Contacts.propTypes = {
+  onMountContacts: PropTypes.string,
+  contacts: PropTypes.array
+};
 
 
 

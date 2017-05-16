@@ -38,6 +38,9 @@ export function productLoadSuccess() {
 }
 
 
+// Contacts section
+
+
 export const CONTACTS_LOAD_START = "CONTACTS_LOAD_START";
 
 export function contactsLoadStart() {
@@ -68,6 +71,42 @@ export const CONTACTS_LOAD_ERROR = "CONTACTS_LOAD_ERROR";
 export function contactsLoadError() {
 
 }
+
+
+// Comments section
+
+export const COMMENTS_LOAD_START = "COMMENTS_LOAD_START"
+
+export function commentsLoadStart() {
+  return (dispatch) =>{
+    dispatch({
+      type: COMMENTS_LOAD_START
+    });
+    fetch("http://localhost:4000/comments").then((response) => {
+      return response.json();
+    }).then((data) => {
+      dispatch(commentsLoadSuccess(data));
+    })
+    .catch(() => {
+      dispatch(commentsLoadError());
+    });
+  };
+}
+
+
+export const COMMENTS_LOAD_SUCCESS = "COMMENTS_LOAD_SUCCESS";
+
+export function commentsLoadSuccess() {
+
+}
+
+export const COMMENTS_LOAD_ERROR = "COMMENTS_LOAD_ERROR";
+
+export function commentsLoadError() {
+
+}
+
+
 
 const rootReducer = combineReducers({
   comments
