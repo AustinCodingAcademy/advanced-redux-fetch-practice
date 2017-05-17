@@ -11,7 +11,11 @@ class App extends Component {
     this.state = {users: []};
   }
   componentDidMount() {
-
+    fetch("/contacts",{method: "GET"}).then( (response) => {
+      console.log(response);
+    }).catch( (err) => {
+      console.log(err);
+    });
   }
   render() {
     return (
@@ -34,5 +38,3 @@ class App extends Component {
   }
 }
 export default (App);
-
-
