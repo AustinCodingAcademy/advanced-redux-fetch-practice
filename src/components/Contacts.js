@@ -9,7 +9,6 @@ class Contacts extends Component {
     }
   }
   render() {
-    console.log("WHy is this broke?")
     return (
       <CollapsableMapper data={this.props.contacts} field="name" />
     );

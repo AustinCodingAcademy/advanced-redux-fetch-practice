@@ -9,9 +9,9 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  console.log("Whi is this broke too?")
   return {
     onMountContacts: () => {
+      console.log("farts");
       dispatch(contactsLoadStart());
     }
   };

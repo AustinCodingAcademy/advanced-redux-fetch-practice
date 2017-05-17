@@ -45,7 +45,6 @@ export function productLoadSuccess(products) {
 export const CONTACTS_LOAD_START = "CONTACTS_LOAD_START";
 
 export function contactsLoadStart() {
-  console.log("what the hell");
   return (dispatch) => {
     dispatch({
       type: CONTACTS_LOAD_START
