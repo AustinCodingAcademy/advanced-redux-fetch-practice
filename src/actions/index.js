@@ -1,17 +1,18 @@
+
+
 // load contacts
-export function loadContacts () {
-  return function thunk () {
-    // url (required), options (optional)
-  fetch('/contacts', {
-    method: 'get'
-  }).then(function(response) {
-    return (dispatch) => {
-      dispatch(contactsLoaded(response.data));
-    }
-  }).catch(function(err) {
-    // Error :(
-  });
-  }
+export function loadContacts() {
+ return function (dispatch) {
+   dispatch({
+     type: "LOAD_CONTACTS"
+   });
+   fetch("/contacts")
+   .then( (response) => {
+     return response.json();
+   }).then((contacts) => {
+     dispatch(contactsLoaded(contacts));
+   });
+ };
 }
 export function contactsLoaded(contacts) {
   return {
@@ -22,18 +23,14 @@ export function contactsLoaded(contacts) {
 
 // load vehicles
 export function loadVehicles () {
-  return function thunk () {
-    // url (required), options (optional)
-  fetch('/vehicles', {
-    method: 'get'
-  }).then(function(response) {
-    return (dispatch) => {
-      dispatch(vehiclesLoaded(response.data));
-    }
-  }).catch(function(err) {
-    // Error :(
-  });
-  }
+  return function (dispatch) {
+  fetch('/vehicles')
+  .then( (response) => {
+    return response.json();
+  }).then ((vehicles) => {
+      dispatch(vehiclesLoaded(vehicles));
+    });
+  };
 }
 export function vehiclesLoaded(vehicles) {
   return {
@@ -88,18 +85,7 @@ export function productsLoaded(products) {
 
 // create products
 export function createProduct (product) {
-  return function thunk () {
-    // url (required), options (optional)
-  fetch('/products', {
-    method: 'POST'
-  }).then(function(response) {
-    return (dispatch) => {
-      dispatch(loadProducts());
-    }
-  }).catch(function(err) {
-    // Error :(
-  });
-  }
+//use slide 20
 }
 
 // create contacts

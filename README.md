@@ -76,14 +76,14 @@
 ### AppContainer
 * In AppContainer.js
 * Import connect √
-* Import actions loadContacts, loadVehicles, loadComments, loadProducts
+* Import actions loadContacts, loadVehicles, loadComments, loadProducts √
 * mapDispatchToProps for these actions to props of the same name
-* Connect and export
-* Remember how to use connect when there is no mapStateToProps
+* Connect and export √
+* Remember how to use connect when there is no mapStateToProps √
 
 ### App
 * In App.js
-* call loadContacts, loadVehicles,loadComments,loadProducts in componentDidMount
+* call loadContacts, loadVehicles,loadComments,loadProducts in componentDidMount √
 
 ### Solution
 * If everything is working, information from db.json should show up under the headings on the left side
