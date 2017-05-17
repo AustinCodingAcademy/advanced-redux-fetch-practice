@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import Products from "../components/Products";
-import productLoadStart from "./reducers";
+import { productLoadStart } from "../actions";
 
 function mapStateToProps(state) {
   return {

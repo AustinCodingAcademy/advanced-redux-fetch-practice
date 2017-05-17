@@ -9,22 +9,16 @@ class Contacts extends Component {
     }
   }
   render() {
+    console.log("WHy is this broke?")
     return (
       <CollapsableMapper data={this.props.contacts} field="name" />
     );
   }
 }
 
+export default Contacts;
 
 Contacts.propTypes = {
   onMountContacts: PropTypes.string,
   contacts: PropTypes.array
 };
-
-
-
-
-
-
-
-export default Contacts;

@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import CollapsableMapper from "./CollapsableMapper";
+import PropTypes from "prop-types";
 
 class Products extends Component {
   componentWillMount() {
@@ -16,3 +17,9 @@ class Products extends Component {
 
 }
 export default Products;
+
+
+Products.propTypes = {
+  onMount: PropTypes.string,
+  products: PropTypes.array
+};

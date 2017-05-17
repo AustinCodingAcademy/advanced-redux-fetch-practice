@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import Comments from "../components/Comments";
-import commentsLoadStart from "./reducers";
+import { commentsLoadStart } from "../actions";
 
 function mapStateToProps(state) {
   return {
