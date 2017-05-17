@@ -41,18 +41,14 @@ export function vehiclesLoaded(vehicles) {
 
 // load comments
 export function loadComments () {
-  return function thunk () {
-    // url (required), options (optional)
-  fetch('/comments', {
-    method: 'get'
-  }).then(function(response) {
-    return (dispatch) => {
-      dispatch(commentsLoaded(response.data));
-    }
-  }).catch(function(err) {
-    // Error :(
-  });
-  }
+  return function (dispatch) {
+  fetch('/comments')
+  .then( (response) => {
+    return response.json();
+  }).then ((comments) => {
+      dispatch(commentsLoaded(comments));
+    });
+  };
 }
 export function commentsLoaded(comments) {
   return {
@@ -63,18 +59,14 @@ export function commentsLoaded(comments) {
 
 // load products
 export function loadProducts () {
-  return function thunk () {
-    // url (required), options (optional)
-  fetch('/products', {
-    method: 'get'
-  }).then(function(response) {
-    return (dispatch) => {
-      dispatch(productsLoaded(response.data));
-    }
-  }).catch(function(err) {
-    // Error :(
-  });
-  }
+  return function (dispatch) {
+  fetch('/products')
+  .then( (response) => {
+    return response.json();
+  }).then ((products) => {
+      dispatch(productsLoaded(products));
+    });
+  };
 }
 export function productsLoaded(products) {
   return {
@@ -84,54 +76,46 @@ export function productsLoaded(products) {
 }
 
 // create products
-export function createProduct (product) {
-//use slide 20
+export function createProduct(product) {
+ return function (dispatch) {
+   fetch("/products", {
+     method: "POST",
+     headers: {"Content-Type": "application/json"},
+     body: JSON.stringify(product)
+   }).then(() => dispatch(loadProducts()));
+ };
 }
 
 // create contacts
-export function createContact (contact) {
-  return function thunk () {
-    // url (required), options (optional)
-  fetch('/contacts', {
-    method: 'POST'
-  }).then(function(response) {
-    return (dispatch) => {
-      dispatch(loadContacts());
-    }
-  }).catch(function(err) {
-    // Error :(
-  });
-  }
+export function createContact(contact) {
+ return function (dispatch) {
+   fetch("/contacts", {
+     method: "POST",
+     headers: {"Content-Type": "application/json"},
+     body: JSON.stringify(contact)
+   }).then(() => dispatch(loadContacts()));
+ };
 }
 
+
 // create comments
-export function createComment (comment) {
-  return function thunk () {
-    // url (required), options (optional)
-  fetch('/comments', {
-    method: 'POST'
-  }).then(function(response) {
-    return (dispatch) => {
-      dispatch(loadComments());
-    }
-  }).catch(function(err) {
-    // Error :(
-  });
-  }
+export function createComment(comment) {
+ return function (dispatch) {
+   fetch("/comments", {
+     method: "POST",
+     headers: {"Content-Type": "application/json"},
+     body: JSON.stringify(comment)
+   }).then(() => dispatch(loadComments()));
+ };
 }
 
 // create vehicles
-export function createVehicle (vehicle) {
-  return function thunk () {
-    // url (required), options (optional)
-  fetch('/vehicles', {
-    method: 'POST'
-  }).then(function(response) {
-    return (dispatch) => {
-      dispatch(loadVehicles());
-    }
-  }).catch(function(err) {
-    // Error :(
-  });
-  }
+export function createVehicle(vehicle) {
+ return function (dispatch) {
+   fetch("/vehicles", {
+     method: "POST",
+     headers: {"Content-Type": "application/json"},
+     body: JSON.stringify(vehicle)
+   }).then(() => dispatch(loadVehicles()));
+ };
 }
