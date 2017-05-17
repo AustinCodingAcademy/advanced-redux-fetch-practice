@@ -7,6 +7,8 @@ import {Provider} from "react-redux";
 
 import "whatwg-fetch";
 
+console.log("When is this executed");
+
 ReactDOM.render(
   <Provider store={store}><AppContainer /></Provider>,
   document.getElementById("root")
