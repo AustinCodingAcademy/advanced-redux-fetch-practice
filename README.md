@@ -3,10 +3,10 @@
 * Do Not use the instructions as your guide for what code to type, use the reference guide project (address book)
 
 ### Use local api
-* http://localhost:4000/products
-* http://localhost:4000/contacts
-* http://localhost:4000/vehicles
-* http://localhost:4000/comments
+* http://localhost:4001/products
+* http://localhost:4001/contacts
+* http://localhost:4001/vehicles
+* http://localhost:4001/comments
 
 
 ### Create actions in actions/index.js to retrieve data
@@ -47,30 +47,30 @@
 * createProduct(product)
    * return a thunk function
    * make a fetch call to /products as a POST
-   * include the product in the body 
+   * include the product in the body
    * in the first then, dispatch to loadProducts
 
 * createContact(contact)
    * return a thunk function
    * make a fetch call to /contacts as a POST
-   * include the contact in the body 
+   * include the contact in the body
    * in the first then, dispatch to loadContacts
 
 * createComment(comment)
    * return a thunk function
    * make a fetch call to /comments as a POST
-   * include the comment in the body 
+   * include the comment in the body
    * in the first then, dispatch to loadComments
 
 * createVehicle(vehicle)
    * return a thunk function
    * make a fetch call to /vehicles as a POST
-   * include the vehicle in the body 
+   * include the vehicle in the body
    * in the first then, dispatch to loadVehicles
 
 ### Create reducers in reducers/index.js
 * Create reducers based on the state in state.js
-* Determine which action the reducers should care about 
+* Determine which action the reducers should care about
 * return the appropriate value
 
 ### AppContainer
@@ -88,6 +88,3 @@
 ### Solution
 * If everything is working, information from db.json should show up under the headings on the left side
 * When you click the create button the newly created data should show up on the left side
-
-
-
