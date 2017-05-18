@@ -3,14 +3,18 @@ import React, { Component } from "react";
 class CollapsableMapper extends Component {
   constructor(props) {
     super(props);
-    this.state = {visible: true};
+    this.state = {
+      visible: true
+    };
   }
+  // find a better way to map through these pieces
+  
   render() {
     let buttonText = "Hide";
     let userDivs = "";
     if (this.state.visible) {
       buttonText = "Hide";
-      userDivs = this.props.data.map((d,i) => {
+      userDivs = this.props.data.map((d, i) => {
         return (
           <div key={i}>
             {d[this.props.field]}

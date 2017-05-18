@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import CollapsableMapper from "./CollapsableMapper";
 
 // the call originates here with the prop onMount.
 // is then sent to the container
@@ -10,9 +11,9 @@ class Products extends Component {
   }
 
   render() {
+    console.log(this.props.products, "these are from ProductsComponent");
     return (
-      <div>
-        dkmk{this.props.products}</div>
+      <CollapsableMapper data={this.props.products} field="name" />
     );
   }
 }

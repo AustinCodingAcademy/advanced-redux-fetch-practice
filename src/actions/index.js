@@ -7,12 +7,10 @@ export function productLoadStart() {
     });
     fetch("http://localhost:4001/products")
     .then((response) => {
-      console.log("execute when loaded");
-      console.log(response);
+      console.log("execute when loaded", response);
       return response.json();
     })
     .then((data) => {
-      console.log("this is the date from products", data);
       dispatch(productLoadSuccess(data));
     }).catch((err) => {
       dispatch(productLoadFailure());
@@ -43,10 +41,10 @@ fetch(url, {
 
 export const PRODUCT_LOAD_SUCCESS = "PRODUCT_LOAD_SUCCESS";
 
-export function productLoadSuccess() {
+export function productLoadSuccess(products) {
   return {
     type: PRODUCT_LOAD_SUCCESS,
-    products: []
+    products
   };
 }
 
@@ -55,5 +53,29 @@ export const PRODUCT_LOAD_FAILURE = "PRODUCT_LOAD_FAILURE";
 export function productLoadFailure() {
   return {
     type: PRODUCT_LOAD_FAILURE
+  };
+}
+
+export const CONTACTS_LOAD_START = "CONTACTS_LOAD_START";
+
+export function contactLoadStart() {
+  return {
+    type: CONTACTS_LOAD_START
+  };
+}
+
+export const CONTACTS_LOAD_SUCCESS = "CONTACTS_LOAD_SUCCESS";
+
+export function contactLoadSuccess() {
+  return {
+    type: CONTACTS_LOAD_SUCCESS
+  };
+}
+
+export const CONTACTS_LOAD_FAILURE = "CONTACTS_LOAD_FAILURE";
+
+export function contactLoadFailure() {
+  return {
+    type: CONTACTS_LOAD_FAILURE
   };
 }
