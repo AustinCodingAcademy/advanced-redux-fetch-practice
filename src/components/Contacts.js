@@ -1,9 +1,14 @@
-import React from "react";
+import React, {Component} from "react";
 import CollapsableMapper from "./CollapsableMapper";
 
-function Contacts(props) {
-  return (
-    <CollapsableMapper data={props.contacts} field="name" />
-  );
+class Contacts extends Component {
+  componentWillMount() {
+
+  }
+  render() {
+    return (
+      <CollapsableMapper data={this.props.contacts} field="name" />
+    );
+  }
 }
 export default Contacts;
