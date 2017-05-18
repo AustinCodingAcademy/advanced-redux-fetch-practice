@@ -7,10 +7,9 @@ import {Provider} from "react-redux";
 import "whatwg-fetch";
 
 fetch("http://localhost:4001/products").then((response) => {
-  console.log("execute when loaded");
-  console.log(response);
+  console.log("this is the response", response);
 }).catch((err) => {
-  console.log("Oops, an error happened.");
+  console.log("if an error occurs, this is the error", err);
 });
 
 ReactDOM.render(
