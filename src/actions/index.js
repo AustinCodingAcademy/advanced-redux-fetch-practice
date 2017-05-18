@@ -61,7 +61,7 @@ export function contactsLoadStart() {
 }
 
 
-export const CONTACTS_LOAD_SUCCESS = "CONTACTS_LOAD_START";
+export const CONTACTS_LOAD_SUCCESS = "CONTACTS_LOAD_SUCCESS";
 
 export function contactsLoadSuccess(contacts) {
   return {

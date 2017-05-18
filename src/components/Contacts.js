@@ -3,7 +3,7 @@ import CollapsableMapper from "./CollapsableMapper";
 import PropTypes from "prop-types";
 
 class Contacts extends Component {
-  contactWillMount() {
+  componentWillMount() {
     if (this.props.onMountContacts) {
       this.props.onMountContacts();
     }
@@ -18,6 +18,6 @@ class Contacts extends Component {
 export default Contacts;
 
 Contacts.propTypes = {
-  onMountContacts: PropTypes.string,
+  onMountContacts: PropTypes.func.isRequired,
   contacts: PropTypes.array
 };

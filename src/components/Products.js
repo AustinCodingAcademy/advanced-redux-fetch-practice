@@ -20,6 +20,6 @@ export default Products;
 
 
 Products.propTypes = {
-  onMount: PropTypes.string,
+  onMount: PropTypes.func.isRequired,
   products: PropTypes.array
 };

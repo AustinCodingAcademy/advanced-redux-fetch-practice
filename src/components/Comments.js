@@ -19,6 +19,6 @@ export default Comments;
 
 
 Comments.propTypes = {
-  onMountComments: PropTypes.string,
+  onMountComments: PropTypes.func.isRequired,
   comments: PropTypes.array
 };

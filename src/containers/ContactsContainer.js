@@ -11,7 +11,6 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
   return {
     onMountContacts: () => {
-      console.log("farts");
       dispatch(contactsLoadStart());
     }
   };

@@ -7,7 +7,7 @@ class Vehicles extends Component {
     if (this.props.onMountVehicles) {
       this.props.onMountVehicles();
     }
-  }
+  }s
 
   render() {
     return (
@@ -19,6 +19,6 @@ class Vehicles extends Component {
 export default Vehicles;
 
 Vehicles.propTypes = {
-  onMountVehicles: PropTypes.string,
+  onMountVehicles: PropTypes.func.isRequired,
   vehicles: PropTypes.array
 };
