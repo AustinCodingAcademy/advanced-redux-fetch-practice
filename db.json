@@ -29,12 +29,6 @@
       "name": "Dana Scully",
       "occupation": "FBI Agent",
       "avatar": "https://pbs.twimg.com/profile_images/718881904834056192/WnMTb__R.jpg"
-    },
-    {
-      "name": "Jon Gucciardi",
-      "occupation": "Web Dev",
-      "avatar": "",
-      "_id": 6
     }
   ],
   "comments": [
@@ -328,96 +322,6 @@
       "make": "Chevey",
       "model": "Impala",
       "_id": 21
-    },
-    {
-      "year": "2008",
-      "make": "Chevey",
-      "model": "Impala",
-      "_id": 22
-    },
-    {
-      "year": "2008",
-      "make": "Chevey",
-      "model": "Impala",
-      "_id": 23
-    },
-    {
-      "year": "2008",
-      "make": "Chevey",
-      "model": "Impala",
-      "_id": 24
-    },
-    {
-      "year": "2008",
-      "make": "Chevey",
-      "model": "Impala",
-      "_id": 25
-    },
-    {
-      "year": "2008",
-      "make": "Chevey",
-      "model": "Impala",
-      "_id": 26
-    },
-    {
-      "year": "2008",
-      "make": "Chevey",
-      "model": "Impala",
-      "_id": 27
-    },
-    {
-      "year": "2008",
-      "make": "Chevey",
-      "model": "Impala",
-      "_id": 28
-    },
-    {
-      "year": "2008",
-      "make": "Chevey",
-      "model": "Impala",
-      "_id": 29
-    },
-    {
-      "year": "2008",
-      "make": "Chevey",
-      "model": "Impala",
-      "_id": 30
-    },
-    {
-      "year": "2008",
-      "make": "Chevey",
-      "model": "Impala",
-      "_id": 31
-    },
-    {
-      "year": "2008",
-      "make": "Chevey",
-      "model": "Impala",
-      "_id": 32
-    },
-    {
-      "year": "2008",
-      "make": "Chevey",
-      "model": "Impala",
-      "_id": 33
-    },
-    {
-      "year": "2010",
-      "make": "Ford",
-      "model": "escort",
-      "_id": 34
-    },
-    {
-      "year": "2010",
-      "make": "Ford",
-      "model": "escort",
-      "_id": 35
-    },
-    {
-      "year": "2015",
-      "make": "Tesla",
-      "model": "sweet",
-      "_id": 36
     }
   ],
   "products": [

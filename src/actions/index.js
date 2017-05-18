@@ -10,7 +10,17 @@ function loadContactsWithFetch(dispatch) {
     return response.json();
   }).then((contacts) => {
     dispatch(contactsLoaded(contacts));
+  }).catch(() => {
+    dispatch(contactsLoadError());
   });
+}
+
+export const CONTACTS_LOAD_ERROR = "CONTACTS_LOAD_ERROR";
+export function contactsLoadError() {
+  return {
+    type: CONTACTS_LOAD_ERROR,
+    message: "Loading Error"
+  };
 }
 
 export function loadContacts() {
@@ -23,8 +33,8 @@ export function contactsLoaded(contacts) {
     value: contacts
   };
 }
-/* load vehicles with fetch */
 
+/* load vehicles with fetch */
 
 function loadVehiclesWithFetch(dispatch) {
   dispatch({
@@ -36,9 +46,18 @@ function loadVehiclesWithFetch(dispatch) {
     return response.json();
   }).then((vehicles) => {
     dispatch(vehiclesLoaded(vehicles));
+  }).catch(() => {
+    dispatch(vehicleLoadError());
   });
 }
 
+export const VEHICLE_LOAD_ERROR = "VEHICLE_LOAD_ERROR";
+export function vehicleLoadError() {
+  return {
+    type: VEHICLE_LOAD_ERROR,
+    message: "Loading Error"
+  };
+}
 
 export function loadVehicles() {
   return loadVehiclesWithFetch;
@@ -63,7 +82,17 @@ function loadCommentsWithFetch(dispatch) {
     return response.json();
   }).then((comments) => {
     dispatch(commentsLoaded(comments));
+  }).catch(() => {
+    dispatch(commentsLoadError());
   });
+}
+
+export const COMMENTS_LOAD_ERROR = "COMMENTS_LOAD_ERROR";
+export function commentsLoadError() {
+  return {
+    type: COMMENTS_LOAD_ERROR,
+    message: "Loading Error"
+  };
 }
 
 export function loadComments() {
@@ -89,7 +118,17 @@ function loadProductsWithFetch(dispatch) {
     return response.json();
   }).then((products) => {
     dispatch(productsLoaded(products));
+  }).catch(() => {
+    dispatch(productLoadError());
   });
+}
+
+export const PRODUCT_LOAD_ERROR = "PRODUCT_LOAD_ERROR";
+export function productLoadError() {
+  return {
+    type: PRODUCT_LOAD_ERROR,
+    message: "Loading Error"
+  };
 }
 
 export function loadProducts() {
