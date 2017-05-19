@@ -79,3 +79,44 @@ export function contactsLoadFailure() {
     type: CONTACTS_LOAD_FAILURE
   };
 }
+
+// VEHICLES
+
+export const VEHICLES_LOAD_START = "VEHICLES_LOAD_START";
+
+export function vehiclesLoadStart() {
+  return (dispatch) => {
+
+    dispatch({
+      type: VEHICLES_LOAD_START
+    });
+
+    fetch("http://localhost:4001/vehicles")
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        dispatch(vehiclesLoadSuccess(data));
+      })
+      .catch((err) => {
+        dispatch(vehiclesLoadFailure("Error", err));
+      });
+  };
+}
+
+export const VEHICLES_LOAD_SUCCESS = "VEHICLES_LOAD_SUCCESS";
+
+export function vehiclesLoadSuccess(vehicles) {
+  return {
+    type: VEHICLES_LOAD_SUCCESS,
+    vehicles
+  };
+}
+
+export const VEHICLES_LOAD_FAILURE = "VEHICLES_LOAD_FAILURE";
+
+export function vehiclesLoadFailure() {
+  return {
+    type: VEHICLES_LOAD_SUCCESS
+  };
+}
