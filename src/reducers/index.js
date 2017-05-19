@@ -1,7 +1,8 @@
 import {combineReducers} from "redux";
 import {
   PRODUCT_LOAD_SUCCESS,
-  CONTACTS_LOAD_SUCCESS
+  CONTACTS_LOAD_SUCCESS,
+  VEHICLES_LOAD_SUCCESS
 } from "../actions";
 
 function comments(state = [], action) {
@@ -24,9 +25,18 @@ function contacts(state = [], action) {
   return state;
 }
 
+function vehicles(state = [], action) {
+  switch (action.type) {
+    case VEHICLES_LOAD_SUCCESS:
+      return action.vehicles;
+  }
+  return state;
+}
+
 const rootReducer = combineReducers({
   comments,
   products,
-  contacts
+  contacts,
+  vehicles
 });
 export default rootReducer;
