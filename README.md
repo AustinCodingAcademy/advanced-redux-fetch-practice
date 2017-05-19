@@ -10,10 +10,10 @@
 
 
 ### Create actions in actions/index.js to retrieve data
-* loadContacts
-    * return a thunk function
-    * make a fetch call to /contacts
-    * in the second then, dispatch to contactsLoaded
+* ~~loadContacts~~
+    * ~~return a thunk function~~
+    * ~~make a fetch call to /contacts~~
+    * ~~in the second then, dispatch to contactsLoaded~~
 * contactsLoaded(contacts)
     * return an action
     * type is “CONTACTS_LOADED”

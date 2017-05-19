@@ -16,14 +16,17 @@ function products(state = [], action) {
   return state;
 }
 
-function comments(state = [], action) {
-  switch(action.type) {
-    case
+function contacts(state = [], action) {
+  switch (action.type) {
+    case CONTACTS_LOAD_SUCCESS:
+      return action.contacts;
   }
+  return state;
 }
 
 const rootReducer = combineReducers({
   comments,
-  products
+  products,
+  contacts
 });
 export default rootReducer;
