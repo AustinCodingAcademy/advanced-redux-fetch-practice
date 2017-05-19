@@ -1,7 +1,7 @@
 import {combineReducers} from "redux";
 
-function vechicles(state = [], action) {
-  if (action.type === "VECHICLES_LOADED") {
+function vehicles(state = [], action) {
+  if (action.type === "VEHICLES_LOADED") {
     return (action.value);
   }
   return state;
@@ -31,7 +31,7 @@ function products(state = [], action) {
 const rootReducer = combineReducers({
   comments,
   contacts,
-  vechicles,
+  vehicles,
   products
 });
 export default rootReducer;

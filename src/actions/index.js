@@ -1,5 +1,6 @@
 export function loadContacts() {
   return function (dispatch) {
+    debugger;
     fetch("/contacts")
      .then( (response) => {
        return response.json();
@@ -16,21 +17,21 @@ export function contactsLoaded(contacts) {
   };
 }
 
-export function loadVechicles() {
+export function loadVehicles() {
   return function (dispatch) {
-    fetch("/vechicles")
+    fetch("/vehicles")
      .then( (response) => {
        return response.json();
-     }).then((vechicles) => {
-       dispatch(vechiclesLoaded(vechicles));
+     }).then((vehicles) => {
+       dispatch(vehiclesLoaded(vehicles));
      });
   };
 }
 
-export function vechiclesLoaded(vechicles) {
+export function vehiclesLoaded(vehicles) {
   return {
-    type: "VECHICLES_LOADED",
-    value: vechicles
+    type: "VEHICLES_LOADED",
+    value: vehicles
   };
 }
 
@@ -75,7 +76,8 @@ export function createProduct(product) {
   return function (dispatch) {
     fetch("/products", {
       method: "POST",
-      body: product,
+      headers: {"Content-Type": "application/json"},
+     body: JSON.stringify(product)
     }).then(() => {
       dispatch(loadProducts());
     });
@@ -86,7 +88,8 @@ export function createContact(contact) {
   return function (dispatch) {
     fetch("/contacts", {
       method: "POST",
-      body: contact,
+      headers: {"Content-Type": "application/json"},
+       body: JSON.stringify(contact)
     }).then(() => {
       dispatch(loadContacts());
     });
@@ -97,20 +100,22 @@ export function createComment(comment) {
   return function (dispatch) {
     fetch("/comments", {
       method: "POST",
-      body: comment,
+      headers: {"Content-Type": "application/json"},
+       body: JSON.stringify(comment)
     }).then(() => {
       dispatch(loadComments());
     });
   };
 }
 
-export function createVehicle(vechicle) {
+export function createVehicle(vehicle) {
   return function (dispatch) {
-    fetch("/vechicles", {
+    fetch("/vehicles", {
       method: "POST",
-      body: vechicle,
+      headers: {"Content-Type": "application/json"},
+     body: JSON.stringify(vehicle)
     }).then(() => {
-      dispatch(loadVechicles());
+      dispatch(loadVehicles());
     });
   };
 }
