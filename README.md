@@ -14,18 +14,18 @@
     * ~~return a thunk function~~
     * ~~make a fetch call to /contacts~~
     * ~~in the second then, dispatch to contactsLoaded~~
-* contactsLoaded(contacts)
-    * return an action
-    * type is “CONTACTS_LOADED”
-    * value is contacts
-* loadVehicles
-    * return a thunk function
-    * make a fetch call to /vehicles
-    * in the second then, dispatch to vehiclesLoaded
-* vehiclesLoaded(vehicles)
-    * return an action
-    * type is “VEHICLES_LOADED”
-    * value is vehicles
+* ~~contactsLoaded(contacts)~~
+    * ~~return an action~~
+    * ~~type is “CONTACTS_LOADED”~~
+    * ~~value is contacts~~
+* ~~loadVehicles~~
+    * ~~return a thunk function~~
+    * ~~make a fetch call to /vehicles~~
+    * ~~in the second then, dispatch to vehiclesLoaded~~
+* ~~vehiclesLoaded(vehicles)~~
+    * ~~return an action~~
+    * ~~type is “VEHICLES_LOADED”~~
+    * ~~value is vehicles~~
 * loadComments
     * return a thunk function
     * make a fetch call to /comments

@@ -120,3 +120,44 @@ export function vehiclesLoadFailure() {
     type: VEHICLES_LOAD_SUCCESS
   };
 }
+
+//  COMMENTS
+
+export const COMMENTS_LOAD_START = "COMMENTS_LOAD_START";
+
+export function commentsLoadStart() {
+  return (dispatch) => {
+
+    dispatch({
+      type: COMMENTS_LOAD_START
+    });
+
+    fetch("http://localhost:4001/comments")
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        dispatch(commentsLoadSuccess(data));
+      })
+      .catch((err) => {
+        dispatch(commentsLoadFailure("Error", err));
+      });
+  };
+}
+
+export const COMMENTS_LOAD_SUCCESS = "COMMENTS_LOAD_SUCCESS";
+
+export function commentsLoadSuccess(comments) {
+  return {
+    type: COMMENTS_LOAD_SUCCESS,
+    comments
+  };
+}
+
+export const COMMENTS_LOAD_FAILURE = "COMMENTS_LOAD_FAILURE";
+
+export function commentsLoadFailure() {
+  return {
+    type: COMMENTS_LOAD_SUCCESS
+  };
+}
