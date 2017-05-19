@@ -70,3 +70,47 @@ export function productsLoaded(products) {
     value: products
   };
 }
+
+export function createProduct(product) {
+  return function (dispatch) {
+    fetch("/products", {
+      method: "POST",
+      body: product,
+    }).then(() => {
+      dispatch(loadProducts());
+    });
+  };
+}
+
+export function createContact(contact) {
+  return function (dispatch) {
+    fetch("/contacts", {
+      method: "POST",
+      body: contact,
+    }).then(() => {
+      dispatch(loadContacts());
+    });
+  };
+}
+
+export function createComment(comment) {
+  return function (dispatch) {
+    fetch("/comments", {
+      method: "POST",
+      body: comment,
+    }).then(() => {
+      dispatch(loadComments());
+    });
+  };
+}
+
+export function createVehicle(vechicle) {
+  return function (dispatch) {
+    fetch("/vechicles", {
+      method: "POST",
+      body: vechicle,
+    }).then(() => {
+      dispatch(loadVechicles());
+    });
+  };
+}
