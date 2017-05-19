@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 
 class CollapsableMapper extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {visible: true};
   }
   render() {
@@ -13,9 +13,9 @@ class CollapsableMapper extends Component {
       userDivs = this.props.data.map((d,i) => {
         return (
           <div key={i}>
-            {d[this.props.field]} 
-            {d[this.props.field1]} 
-            {d[this.props.field2]} 
+            {d[this.props.field]}
+            {d[this.props.field1]}
+            {d[this.props.field2]}
             {d[this.props.field3]}
           </div>
         );
