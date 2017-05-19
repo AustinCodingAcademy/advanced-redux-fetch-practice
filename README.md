@@ -34,14 +34,14 @@
     * return an action
     * type is “COMMENTS_LOADED”
     * value is comments
-* loadProducts
-    * return a thunk function
-    * make a fetch call to /products
-    * in the second then, dispatch to productsLoaded
-* productsLoaded(products)
-    * return an action
-    * type is “PRODUCTS_LOADED”
-    * value is products
+* ~~loadProducts~~
+    * ~~return a thunk function~~
+    * ~~make a fetch call to /products~~
+    * ~~in the second then, dispatch to productsLoaded~~
+* ~~productsLoaded(products)~~
+    * ~~return an action~~
+    * ~~type is “PRODUCTS_LOADED”~~
+    * ~~value is products~~
 
 ### Create actions in actions/index.js to create data
 * createProduct(product)
