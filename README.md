@@ -26,14 +26,14 @@
     * ~~return an action~~
     * ~~type is “VEHICLES_LOADED”~~
     * ~~value is vehicles~~
-* loadComments
-    * return a thunk function
-    * make a fetch call to /comments
-    * in the second then, dispatch to commentsLoaded
-* commentsLoaded(comments)
-    * return an action
-    * type is “COMMENTS_LOADED”
-    * value is comments
+* ~~loadComments~~
+    * ~~return a thunk function~~
+    * ~~make a fetch call to /comments~~
+    * ~~in the second then, dispatch to commentsLoaded~~
+* ~~commentsLoaded(comments)~~
+    * ~~return an action~~
+    * ~~type is “COMMENTS_LOADED”~~
+    * ~~value is comments~~
 * ~~loadProducts~~
     * ~~return a thunk function~~
     * ~~make a fetch call to /products~~
