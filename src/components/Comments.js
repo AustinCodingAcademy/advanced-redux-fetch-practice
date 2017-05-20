@@ -3,6 +3,9 @@ import CollapsableMapper from "./CollapsableMapper";
 
 class Comments extends Component{
   componentDidMount(){
+    if (this.props.onMount) {
+      this.props.onMount();
+    }
       console.log("component has mounted");
   }
 

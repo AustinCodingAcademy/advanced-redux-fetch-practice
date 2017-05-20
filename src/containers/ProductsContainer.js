@@ -11,7 +11,7 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
   return {
     onMount: () => {
-      console.log("Products will mount");
+      // console.log("Products will mount");
       dispatch(productLoadStart());
     }
   };

@@ -2,6 +2,12 @@
 export const PRODUCT_LOAD_START = "PRODUCT_LOAD_START";
 export const PRODUCT_LOAD_ERROR = "PRODUCT_LOAD_ERROR";
 export const PRODUCT_LOAD_SUCCESS = "PRODUCT_LOAD_SUCCESS";
+export const COMMENT_LOAD_START = "COMMENT_LOAD_START";
+export const COMMENT_LOAD_ERROR = "COMMENT_LOAD_ERROR";
+export const COMMENT_LOAD_SUCCESS = "COMMENT_LOAD_SUCCESS";
+export const VEHICLE_LOAD_START = "VEHICLE_LOAD_START";
+export const VEHICLE_LOAD_ERROR = "VEHICLE_LOAD_ERROR";
+export const VEHICLE_LOAD_SUCCESS = "VEHICLE_LOAD_SUCCESS";
 
 
 export function productLoadStart() {
@@ -12,24 +18,23 @@ export function productLoadStart() {
 
     fetch("http://localhost:4001/products")
       .then((response) => {
-        console.log("Execute this when data is retrieved inside thunk", response);
+        // console.log("Execute this when data is retrieved inside thunk", response);
         return response.json();
       })
       .then((data) => {
-        console.log(data);
+        // console.log("Then Log", data);
         dispatch(productLoadSuccess(data));
       })
       .catch((err) => {
-        console.log("Error inside thunk", err);
+        // console.log("Error inside thunk", err);
       });
   };
 }
 
 export function productLoadSuccess(products) {
-  return (dispatch) => {
-    dispatch({
-      type: PRODUCT_LOAD_SUCCESS
-    });
+  return {
+    type: PRODUCT_LOAD_SUCCESS,
+    payload: products
   };
 }
 
@@ -37,6 +42,51 @@ export function productLoadError() {
   return (dispatch) => {
     dispatch({
       type: PRODUCT_LOAD_ERROR
+    });
+  };
+}
+
+export function commentLoadStart() {
+  return (dispatch) => {
+    dispatch({
+      type: COMMENT_LOAD_START
+    });
+
+    fetch("http://localhost:4001/comments")
+      .then((response) => {
+        console.log("Execute this when data is retrieved inside thunk", response);
+        return response.json();
+      })
+      .then((data) => {
+        console.log("Comments Then Log", data);
+        dispatch(commentLoadSuccess(data));
+      })
+      .catch((err) => {
+        console.log("Error inside comment thunk", err);
+        dispatch(commentLoadError(err));
+      });
+  };
+}
+
+export function commentLoadSuccess(comments) {
+  return {
+    type: COMMENT_LOAD_SUCCESS,
+    payload: comments
+  };
+}
+
+export function commentLoadError() {
+  return (dispatch) => {
+    dispatch({
+      type: COMMENT_LOAD_ERROR
+    });
+  };
+}
+
+export function vehicleLoadSuccess(){
+  return (dispatch) => {
+    dispatch({
+      type: VEHICLE_LOAD_SUCCESS
     });
   };
 }
