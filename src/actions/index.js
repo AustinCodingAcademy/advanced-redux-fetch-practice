@@ -54,15 +54,15 @@ export function commentLoadStart() {
 
     fetch("http://localhost:4001/comments")
       .then((response) => {
-        console.log("Execute this when data is retrieved inside thunk", response);
+        // console.log("Execute this when data is retrieved inside thunk", response);
         return response.json();
       })
       .then((data) => {
-        console.log("Comments Then Log", data);
+        // console.log("Comments Then Log", data);
         dispatch(commentLoadSuccess(data));
       })
       .catch((err) => {
-        console.log("Error inside comment thunk", err);
+        // console.log("Error inside comment thunk", err);
         dispatch(commentLoadError(err));
       });
   };
@@ -83,10 +83,38 @@ export function commentLoadError() {
   };
 }
 
-export function vehicleLoadSuccess(){
+export function vehicleLoadStart(vehicles){
   return (dispatch) => {
     dispatch({
-      type: VEHICLE_LOAD_SUCCESS
+      type: VEHICLE_LOAD_START
+    });
+
+    fetch("http://localhost:4001/vehicles")
+      .then((response) => {
+        console.log("Execute this when data is retrieved inside vehicle thunk", response);
+        return response.json();
+      })
+      .then((data) => {
+        console.log("Vehicle Then Log", data);
+        dispatch(vehicleLoadSuccess(data));
+      })
+      .catch((err) => {
+        console.log("Error inside vehicle thunk", err);
+      });
+  };
+}
+
+export function vehicleLoadSuccess(vehicles) {
+  return {
+    type: VEHICLE_LOAD_SUCCESS,
+    payload: vehicles
+  };
+}
+
+export function vehicleLoadError() {
+  return (dispatch) => {
+    dispatch({
+      type: VEHICLE_LOAD_ERROR
     });
   };
 }

@@ -5,7 +5,10 @@ import {
   PRODUCT_LOAD_ERROR,
   COMMENT_LOAD_SUCCESS,
   COMMENT_LOAD_START,
-  COMMENT_LOAD_ERROR
+  COMMENT_LOAD_ERROR,
+  VEHICLE_LOAD_SUCCESS,
+  VEHICLE_LOAD_START,
+  VEHICLE_LOAD_ERROR
  } from "../actions";
 /* eslint-disable no-unused-vars */
 
@@ -14,6 +17,15 @@ function contacts(state = [], action) {
 }
 
 function vehicles(state = [], action) {
+  switch (action.type) {
+    case VEHICLE_LOAD_START:
+      return [];
+    case VEHICLE_LOAD_ERROR:
+      return [];
+    case VEHICLE_LOAD_SUCCESS:
+    console.log("vehicle reducer return", action);
+      return action.payload;
+  }
   return state;
 }
 

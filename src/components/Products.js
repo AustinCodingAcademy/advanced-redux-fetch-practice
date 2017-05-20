@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import CollapsableMapper from "./CollapsableMapper";
 
 class Products extends Component {
