@@ -85,7 +85,7 @@ export function commentLoadError() {
   };
 }
 
-export function vehicleLoadStart(vehicles){
+export function vehicleLoadStart(vehicles) {
   return (dispatch) => {
     dispatch({
       type: VEHICLE_LOAD_START
@@ -154,5 +154,45 @@ export function contactLoadError() {
     dispatch({
       type: CONTACT_LOAD_ERROR
     });
+  };
+}
+
+export function createProduct(product) {
+  return function (dispatch) {
+    fetch("http://localhost:4001/products", {
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify(product)
+    }).then(() => dispatch(productLoadSuccess()));
+  };
+}
+
+export function createContact(contact) {
+  return function (dispatch) {
+    fetch("http://localhost:4001/contacts", {
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify(contact)
+    }).then(() => dispatch(contactLoadSuccess()));
+  };
+}
+
+export function createComment(comment) {
+  return function (dispatch) {
+    fetch("http://localhost:4001/comments", {
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify(comment)
+    }).then(() => dispatch(commentLoadSuccess()));
+  };
+}
+
+export function createVehicle(vehicle) {
+  return function (dispatch) {
+    fetch("http://localhost:4001/vehicles", {
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify(vehicle)
+    }).then(() => dispatch(vehicleLoadSuccess()));
   };
 }
