@@ -5,16 +5,18 @@ import ProductsContainer from "./containers/ProductsContainer";
 import VehiclesContainer from "./containers/VehiclesContainer";
 import CommentsContainer from "./containers/CommentsContainer";
 import CreateThingsContainer from "./containers/CreateThingsContainer";
+import PropTypes from "prop-types";
+
 class App extends Component {
   constructor() {
     super();
     this.state = {users: []};
   }
   componentDidMount() {
-    // this.props.loadContacts();
-    // this.props.loadVehicles();
-    // this.props.loadComments();
-    // this.props.loadProducts();
+    this.props.loadContacts();
+    this.props.loadVehicles();
+    this.props.loadComments();
+    this.props.loadProducts();
   }
   render() {
     return (
@@ -37,3 +39,10 @@ class App extends Component {
   }
 }
 export default (App);
+
+App.propTypes = {
+  loadContacts: PropTypes.func.isRequired,
+  loadVehicles: PropTypes.func.isRequired,
+  loadComments: PropTypes.func.isRequired,
+  loadProducts: PropTypes.func.isRequired
+};

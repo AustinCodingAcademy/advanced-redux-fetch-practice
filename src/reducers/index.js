@@ -22,7 +22,7 @@ function contacts(state = [], action) {
     case CONTACT_LOAD_ERROR:
       return [];
     case CONTACT_LOAD_SUCCESS:
-    console.log("contact reducer return", action);
+      console.log("contact reducer return", action);
       return action.payload;
   }
   return state;
@@ -35,7 +35,7 @@ function vehicles(state = [], action) {
     case VEHICLE_LOAD_ERROR:
       return [];
     case VEHICLE_LOAD_SUCCESS:
-    console.log("vehicle reducer return", action);
+      console.log("vehicle reducer return", action);
       return action.payload;
   }
   return state;
@@ -48,7 +48,7 @@ function comments(state = [], action) {
     case COMMENT_LOAD_ERROR:
       return [];
     case COMMENT_LOAD_SUCCESS:
-    console.log("comments reducer return", action);
+      console.log("comments reducer return", action);
       return action.payload;
   }
   return state;
@@ -61,7 +61,7 @@ function products(state = [], action) {
     case PRODUCT_LOAD_ERROR:
       return [];
     case PRODUCT_LOAD_SUCCESS:
-    console.log("products reducer return", action);
+      console.log("products reducer return", action);
       return action.payload;
   }
   return state;
