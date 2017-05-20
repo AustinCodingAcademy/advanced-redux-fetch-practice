@@ -6,12 +6,12 @@ import VehiclesContainer from "./containers/VehiclesContainer";
 import CommentsContainer from "./containers/CommentsContainer";
 import CreateThingsContainer from "./containers/CreateThingsContainer";
 class App extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {users: []};
   }
   componentDidMount() {
-
+    this.props.productLoadStart();
   }
   render() {
     return (
@@ -34,5 +34,3 @@ class App extends Component {
   }
 }
 export default (App);
-
-

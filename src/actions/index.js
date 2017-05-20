@@ -9,7 +9,8 @@ export const PRODUCT_CREATE_START = "PRODUCT_CREATE_START";
 export function createProduct(product) {
   return (dispatch) => {
     dispatch({
-      type: PRODUCT_CREATE_START
+      type: PRODUCT_CREATE_START,
+      product
     });
 
     fetch("http://localhost:4001/products", {

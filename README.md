@@ -44,11 +44,11 @@
     * ~~value is products~~
 
 ### Create actions in actions/index.js to create data
-* createProduct(product)
-   * return a thunk function
-   * make a fetch call to /products as a POST
-   * include the product in the body
-   * in the first then, dispatch to loadProducts
+* ~~createProduct(product)~~
+   * ~~return a thunk function~~
+   * ~~make a fetch call to /products as a POST~~
+   * ~~include the product in the body~~
+   * ~~in the first then, dispatch to loadProducts~~
 
 * createContact(contact)
    * return a thunk function
