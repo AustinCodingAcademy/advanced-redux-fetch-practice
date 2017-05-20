@@ -8,7 +8,9 @@ export const COMMENT_LOAD_SUCCESS = "COMMENT_LOAD_SUCCESS";
 export const VEHICLE_LOAD_START = "VEHICLE_LOAD_START";
 export const VEHICLE_LOAD_ERROR = "VEHICLE_LOAD_ERROR";
 export const VEHICLE_LOAD_SUCCESS = "VEHICLE_LOAD_SUCCESS";
-
+export const CONTACT_LOAD_START = "CONTACT_LOAD_START";
+export const CONTACT_LOAD_ERROR = "CONTACT_LOAD_ERROR";
+export const CONTACT_LOAD_SUCCESS = "CONTACT_LOAD_SUCCESS";
 
 export function productLoadStart() {
   return (dispatch) => {
@@ -115,6 +117,42 @@ export function vehicleLoadError() {
   return (dispatch) => {
     dispatch({
       type: VEHICLE_LOAD_ERROR
+    });
+  };
+}
+
+export function contactLoadStart(contacts){
+  return (dispatch) => {
+    dispatch({
+      type: CONTACT_LOAD_START
+    });
+
+    fetch("http://localhost:4001/contacts")
+      .then((response) => {
+        console.log("Execute this when data is retrieved inside contacts thunk", response);
+        return response.json();
+      })
+      .then((data) => {
+        console.log("Contacts Then Log", data);
+        dispatch(contactLoadSuccess(data));
+      })
+      .catch((err) => {
+        console.log("Error inside contacts thunk", err);
+      });
+  };
+}
+
+export function contactLoadSuccess(contacts) {
+  return {
+    type: CONTACT_LOAD_SUCCESS,
+    payload: contacts
+  };
+}
+
+export function contactLoadError() {
+  return (dispatch) => {
+    dispatch({
+      type: CONTACT_LOAD_ERROR
     });
   };
 }
