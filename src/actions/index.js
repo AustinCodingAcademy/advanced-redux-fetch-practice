@@ -2,6 +2,27 @@ export const PRODUCT_LOAD_START = "PRODUCT_LOAD_START";
 
 //  PRODUCTS
 
+// create product
+
+export const PRODUCT_CREATE_START = "PRODUCT_CREATE_START";
+
+export function createProduct(product) {
+  return (dispatch) => {
+    dispatch({
+      type: PRODUCT_CREATE_START
+    });
+
+    fetch("http://localhost:4001/products", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application.json"
+      },
+      body: JSON.stringify(product)
+    })
+    .then(() => dispatch(productLoadStart()));
+  };
+}
+
 export function productLoadStart() {
   return (dispatch) => {
 
@@ -17,7 +38,7 @@ export function productLoadStart() {
         dispatch(productLoadSuccess(data));
       })
       .catch((err) => {
-        dispatch(productLoadFailure("Error", err));
+        dispatch(productLoadFailure("Error:", err));
       });
   };
 }
