@@ -67,7 +67,7 @@ export function contactsLoaded(contacts) {
   return (dispatch) => {
     dispatch({
       type: CONTACTS_LOADED,
-      value: contacts
+      contacts
     });
   };
 }
@@ -93,7 +93,7 @@ export function vehiclesLoaded(vehicles) {
   return (dispatch) => {
     dispatch({
       type: VEHICLES_LOADED,
-      value: vehicles
+      vehicles
     });
   };
 }
@@ -119,7 +119,7 @@ export function commentsLoaded(comments) {
   return (dispatch) => {
     dispatch({
       type: COMMENTS_LOADED,
-      value: comments
+      comments
     });
   };
 }
@@ -145,7 +145,7 @@ export function productsLoaded(products) {
   return (dispatch) => {
     dispatch({
       type: PRODUCTS_LOADED,
-      value: products
+      products
     });
   };
 }
