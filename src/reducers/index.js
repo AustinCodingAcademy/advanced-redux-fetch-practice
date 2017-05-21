@@ -63,6 +63,7 @@ function products(state = [], action) {
     case PRODUCT_LOAD_SUCCESS:
       console.log("products reducer return", action);
       return action.payload;
+      // [...state, action.payload] "Spread Operator"
   }
   return state;
 }

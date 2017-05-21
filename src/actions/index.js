@@ -163,7 +163,7 @@ export function createProduct(product) {
       method: "POST",
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify(product)
-    }).then(() => dispatch(productLoadSuccess()));
+    }).then(() => dispatch(productLoadStart()));
   };
 }
 
@@ -173,7 +173,7 @@ export function createContact(contact) {
       method: "POST",
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify(contact)
-    }).then(() => dispatch(contactLoadSuccess()));
+    }).then(() => dispatch(contactLoadStart()));
   };
 }
 
@@ -183,7 +183,7 @@ export function createComment(comment) {
       method: "POST",
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify(comment)
-    }).then(() => dispatch(commentLoadSuccess()));
+    }).then(() => dispatch(commentLoadStart()));
   };
 }
 
@@ -193,6 +193,6 @@ export function createVehicle(vehicle) {
       method: "POST",
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify(vehicle)
-    }).then(() => dispatch(vehicleLoadSuccess()));
+    }).then(() => dispatch(vehicleLoadStart()));
   };
 }

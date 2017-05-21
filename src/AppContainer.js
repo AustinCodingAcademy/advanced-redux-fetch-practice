@@ -1,25 +1,26 @@
 import App from "./App";
 import "./App.css";
 import { connect } from "react-redux";
-import {loadContacts} from "./actions";
-import {loadVehicles} from "./actions";
-import {loadComments} from "./actions";
-import {loadProducts} from "./actions";
+import {contactLoadStart,
+        vehicleLoadStart,
+        commentLoadStart,
+        productLoadStart
+      } from "./actions";
 
 function mapDispatchToProps(dispatch) {
   return {
-    loadContacts() {
-      dispatch(loadContacts());
+    loadContacts: () => {
+      dispatch(contactLoadStart());
     },
-    loadVehicles() {
-      dispatch(loadVehicles());
+    loadVehicles: () => {
+      dispatch(vehicleLoadStart());
     },
-    loadComments() {
-      dispatch(loadComments());
+    loadComments: () => {
+      dispatch(commentLoadStart());
     },
-    loadProducts() {
-      dispatch(loadProducts());
-    }
+    loadProducts: () => {
+      dispatch(productLoadStart());
+    },
   };
 }
 
