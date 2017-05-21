@@ -1,23 +1,21 @@
+/*
 export const PRODUCT_LOAD_START = "PRODUCT_LOAD_START";
-
+// thunk method, uses Middleware in Store.js
+// It is not executed right away, but sent to the middleware.
+// The middleware identifies it as a thunk, and gives it the dispatch function.
+// We get the dispatch function below and dispatch the action inside, PRODUCT_LOAD_START
+// The only way to change data inside the store is to dispatch an action
+// You can only dispatch actions
 export function productLoadStart() {
-  // thunk method, uses Middleware in Store.js
-  // It is not executed right away, but sent to the middleware.
-  // The middleware identifies it as a thunk, and gives it the dispatch function.
-  // We get the dispatch function below and dispatch the action inside, PRODUCT_LOAD_START
-  // The only way to change data inside the store is to dispatch an action
-  // You can only dispatch actions
   return (dispatch) => {
     dispatch({
       type: PRODUCT_LOAD_START
     });
     fetch("http://localhost:4001/products")
     .then((response) => {
-      console.log("Execute! thunktion",response);
       return response.json();
     })
     .then((data) => {
-      console.log(data);
       dispatch(productLoadSuccess(data));
     })
     .catch(() => {
@@ -25,6 +23,7 @@ export function productLoadStart() {
     });
   };
 }
+
 export const PRODUCT_LOAD_SUCCESS = "PRODUCT_LOAD_SUCCESS";
 
 export function productLoadSuccess(products) {
@@ -33,6 +32,8 @@ export function productLoadSuccess(products) {
     products // (using shorthand) <- products: products
   };
 }
+
+*/
 
 export const PRODUCT_LOAD_ERROR = "PRODUCT_LOAD_ERROR";
 
