@@ -65,6 +65,12 @@
       "occupation": "Programmer",
       "avatar": "",
       "_id": 11
+    },
+    {
+      "name": "Ivo",
+      "occupation": "",
+      "avatar": "",
+      "_id": 12
     }
   ],
   "comments": [
