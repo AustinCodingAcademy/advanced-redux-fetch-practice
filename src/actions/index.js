@@ -125,7 +125,7 @@ export function vehicleLoadStart() {
         return response.json();
       })
       .then((data) => {
-        console.log("vehicle text confverted .then log", data)
+        console.log("vehicle text confverted .then log", data);
         dispatch(vehicleLoadSucess(data));
       })
       .catch((err) => {

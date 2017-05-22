@@ -6,6 +6,7 @@ class Contacts extends Component {
     if (this.props.onMount) {
       this.props.onMount();
     }
+    console.log("contacts mounted")
   }
   render() {
     return (
