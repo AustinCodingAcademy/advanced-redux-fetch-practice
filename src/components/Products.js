@@ -24,6 +24,7 @@ class Products extends Component {
       this.props.onMount()
     }
   }
+
   render() {
     return (
       <CollapsableMapper data={this.props.products} field="name" />
