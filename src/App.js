@@ -11,7 +11,10 @@ class App extends Component {
     this.state = {users: []};
   }
   componentDidMount() {
-
+    this.props.loadVehicles();
+    this.props.loadComments();
+    this.props.loadProducts();
+    this.props.loadContacts();
   }
   render() {
     return (
@@ -34,5 +37,3 @@ class App extends Component {
   }
 }
 export default (App);
-
-
