@@ -3,19 +3,21 @@ export const CONTACTS_LOADED = "CONTACTS_LOADED";
 export const VEHICLES_LOADED = "VEHICLES_LOADED";
 export const PRODUCTS_LOADED = "PRODUCTS_LOADED";
 export const COMMENTS_LOADED = "COMMENTS_LOADED";
+export const LOAD_CONTACTS = "LOAD_CONTACTS";
+export const CONTACTS_ERROR = "CONTACTS_ERROR";
 
 export function loadContacts() {
   return (dispatch) => {
     dispatch({
-      type: CONTACTS_LOADED
+      type: LOAD_CONTACTS
     });
     fetch("/contacts")
-    .then((contacts) => {
-      contacts.json();
+    .then((response) => {
+      return response.json();
     }).then((contacts) => {
       dispatch((contactsLoaded(contacts)));
     }).catch((err) => {
-      console.log(err);
+      dispatch(contactsError(err));
     });
   };
 }
@@ -24,6 +26,13 @@ export function contactsLoaded(contacts) {
   return {
     type: CONTACTS_LOADED,
     contacts
+  };
+}
+
+export function contactsError(err) {
+  return {
+    type: CONTACTS_ERROR,
+    err
   };
 }
 
@@ -43,9 +52,21 @@ export function loadVehicles() {
   return (dispatch) => {
     fetch("/vehicles")
     .then((vehicles) => {
-      vehicles.json();
+      return vehicles.json();
     }).then((vehicles) => {
       dispatch((vehiclesLoaded(vehicles)));
+    });
+  };
+}
+
+export function createVehicle(vehicle) {
+  return function (dispatch) {
+    fetch("/vehicles",{
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify(vehicle)
+    }).then(() => {
+      dispatch(loadVehicles());
     });
   };
 }
@@ -62,7 +83,7 @@ export function loadProducts() {
   return (dispatch) => {
     fetch("/products")
     .then((products) => {
-      products.json();
+      return products.json();
     }).then((products) => {
       dispatch((productsLoaded(products)));
     });
@@ -76,11 +97,23 @@ export function productsLoaded(products) {
   };
 }
 
+export function createProduct(product) {
+  return function (dispatch) {
+    fetch("/products",{
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify(product)
+    }).then(() => {
+      dispatch(loadProducts());
+    });
+  };
+}
+
 export function loadComments() {
   return (dispatch) => {
     fetch("/comments")
     .then((comments) => {
-      comments.json();
+      return comments.json();
     }).then((comments) => {
       dispatch((commentsLoaded(comments)));
     });
@@ -91,6 +124,18 @@ export function commentsLoaded(comments) {
   return {
     type: COMMENTS_LOADED,
     value: comments
+  };
+}
+
+export function createComment(comment) {
+  return function (dispatch) {
+    fetch("/comments",{
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify(comment)
+    }).then(() => {
+      dispatch(loadComments());
+    });
   };
 }
 // export function productLoadStart() {
