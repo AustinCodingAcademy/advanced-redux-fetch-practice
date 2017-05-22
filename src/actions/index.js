@@ -30,6 +30,8 @@ export const CONTACT_LOAD_START = "CONTACT_LOAD_START";
 export const CONTACT_LOAD_SUCCESS = "CONTACT_LOAD_SUCCESS";
 export const CONTACT_LOAD_ERROR = "CONTACT_LOAD_ERROR";
 
+
+/*  ############### Product ################################ */
 // action creator
 export function productLoadStart() {
   return (dispatch) => {  // this is a thunk
@@ -63,20 +65,22 @@ export function productLoadSuccess(products) {
     type: PRODUCT_LOAD_SUCCESS,
     // products: products  ---short hand is belwo
     // payload:  products - aka
-      products
+    products
     // data: products
 
   };
 }
 
 export function productLoadError() {
-  return {
-    type: PRODUCT_LOAD_ERROR,
-    message: " "
+  return (dispatch) => {
+    dispatch({
+      type: PRODUCT_LOAD_ERROR,
+      message: " "
+    });
   };
 }
 
-/*  ############################################### */
+/*  ################ COMMENT ############################### */
 export function commentLoadStart() {
   return (dispatch) => {
     dispatch({
@@ -111,8 +115,9 @@ export function commentLoadError() {
     });
   };
 }
-
 /*  ############################################### */
+
+/*  ################ VEHICLE ############################### */
 export function vehicleLoadStart() {
   return (dispatch) => {
     dispatch({
@@ -148,8 +153,9 @@ export function vehicleLoadError() {
     });
   };
 }
-
 /*  ############################################### */
+
+/*  ############### CONTACTS ################################ */
 export function contactLoadStart(contacts) {
   return (dispatch) => {
     dispatch({
@@ -184,4 +190,4 @@ export function contactLoadError() {
       type: CONTACT_LOAD_ERROR
     });
   };
-}
+}/*  ############################################### */

@@ -5,11 +5,11 @@ class CollapsableMapper extends Component {
     super();
     this.state = {visible: true};
   }
-  componentWillReceiveProps(nextProps) {
-    if (nextProps) {
-      this.props = {...nextProps};
-    } 
-  }
+  // componentWillReceiveProps(nextProps) {
+  //   if (nextProps) {
+  //     this.props = {...nextProps};
+  //   }
+  // }
   render() {
     let buttonText = "Hide";
     let userDivs = "";
