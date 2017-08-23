@@ -103,25 +103,40 @@ export function createVehicle(vehicle) {
 }
 
 export function createComment(comment) {
-  return fetch("/comments", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify(comment)
-  }).then((dispatch) => {
-    dispatch(loadComments())
-  });
+  return function(dispatch) {
+    dispatch({
+      type: "SET_COMMENTS"
+    });
+
+    fetch("/comments", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(comment)
+    }).then((comment) => {
+      dispatch(loadComments(comment));
+    });
+  }
 }
 
-export function createProducts(product) {
-  return fetch("/products", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify(product)
-  }).then((dispatch) => {
-    dispatch(loadProducts())
-  });
+export function createProduct(product) {
+  console.log(product);
+
+  return function(dispatch) {
+    dispatch({
+      type: "CREATE_PRODUCT"
+    });
+
+    fetch("/products", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      name: JSON.stringify(product.name),
+      description: JSON.stringify(product.description)
+    }).then((product) => {
+      dispatch(loadProducts(product))
+    });
+  }
 }

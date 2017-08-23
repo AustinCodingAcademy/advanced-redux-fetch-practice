@@ -24,6 +24,12 @@ class CreateThings extends React.Component {
     };
   }
   render() {
+    console.log(this.state.product);
+    console.log(this.state.comment);
+
+    // console.log(this.props.createProduct);
+    // console.log(this.props.createComment);
+
     return (
       <div>
         <div>
@@ -141,9 +147,9 @@ class CreateThings extends React.Component {
             </div>
             <button>Create</button>
           </form>
-        </div>        
+        </div>
       </div>
-      
+
     );
   }
 }

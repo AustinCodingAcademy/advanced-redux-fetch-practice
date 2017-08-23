@@ -8,6 +8,9 @@ import {
 } from "../actions";
 
 function mapDispatchToProps(dispatch) {
+  // console.log(createProduct);
+  // console.log(createComment);
+
   return {
     createProduct: function (product) {
       dispatch(createProduct(product));
