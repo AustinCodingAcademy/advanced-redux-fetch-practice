@@ -1,5 +1,5 @@
 export function loadContacts() {
- return function (dispatch) {
+  return function (dispatch) {
    dispatch({
      type: "LOAD_CONTACTS"
    });
@@ -9,17 +9,17 @@ export function loadContacts() {
    }).then((contacts) => {
      dispatch(contactsLoaded(contacts));
    });
- };
+  };
 }
 export function contactsLoaded(contacts) {
- return {
+  return {
    type: "CONTACTS_LOADED",
    value: contacts
- };
+  };
 }
 
 export function loadVehicles() {
- return function (dispatch) {
+  return function (dispatch) {
    dispatch({
      type: "LOAD_VEHICLES"
    });
@@ -29,17 +29,17 @@ export function loadVehicles() {
    }).then((vehicles) => {
      dispatch(vehiclesLoaded(vehicles));
    });
- };
+  };
 }
 export function vehiclesLoaded(vehicles) {
- return {
+  return {
    type: "VEHICLES_LOADED",
    value: vehicles
- };
+  };
 }
 
 export function loadComments() {
- return function (dispatch) {
+  return function (dispatch) {
    dispatch({
      type: "LOAD_COMMENTS"
    });
@@ -49,18 +49,17 @@ export function loadComments() {
    }).then((comments) => {
      dispatch(commentsLoaded(comments));
    });
- };
+  };
 }
 export function commentsLoaded(comments) {
-  console.log(comments);
- return {
+  return {
    type: "COMMENTS_LOADED",
    value: comments
- };
+  };
 }
 
 export function loadProducts() {
- return function (dispatch) {
+  return function (dispatch) {
    dispatch({
      type: "LOAD_PRODUCTS"
    });
@@ -70,13 +69,13 @@ export function loadProducts() {
    }).then((products) => {
      dispatch(productsLoaded(products));
    });
- };
+  };
 }
 export function productsLoaded(products) {
- return {
+  return {
    type: "PRODUCTS_LOADED",
    value: products
- };
+};
 }
 
 export function createContact(contact) {

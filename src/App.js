@@ -8,13 +8,19 @@ import CreateThingsContainer from "./containers/CreateThingsContainer";
 
 
 class App extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {users: []};
   }
+
   componentDidMount() {
+    this.props.loadContacts();
+    this.props.loadComments();
+    this.props.loadProducts();
+    this.props.loadVehicles();
 
   }
+
   render() {
     return (
       <div>
