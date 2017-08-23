@@ -79,35 +79,35 @@ export function productsLoaded(products) {
 }
 
 export function createContact(contact) {
-  return fetch("/contacts", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify(contact)
-  }).then((dispatch) => {
-    dispatch(loadContacts())
-  });
+  return function(dispatch) {
+    fetch("/contacts", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(contact)
+    }).then((contact) => {
+      dispatch(loadContacts(contact))
+    });
+  }
 }
 
 export function createVehicle(vehicle) {
-  return fetch("/vehicles", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify(vehicle)
-  }).then((dispatch) => {
-    dispatch(loadVehicles())
-  });
+  return function(dispatch) {
+    fetch("/vehicles", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(vehicle)
+    }).then((vehicle) => {
+      dispatch(loadVehicles(vehicle))
+    });
+  }
 }
 
 export function createComment(comment) {
   return function(dispatch) {
-    dispatch({
-      type: "SET_COMMENTS"
-    });
-
     fetch("/comments", {
       method: "POST",
       headers: {
@@ -124,17 +124,12 @@ export function createProduct(product) {
   console.log(product);
 
   return function(dispatch) {
-    dispatch({
-      type: "CREATE_PRODUCT"
-    });
-
     fetch("/products", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
       },
-      name: JSON.stringify(product.name),
-      description: JSON.stringify(product.description)
+      body: JSON.stringify(product),
     }).then((product) => {
       dispatch(loadProducts(product))
     });
