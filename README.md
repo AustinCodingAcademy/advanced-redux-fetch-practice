@@ -1,6 +1,6 @@
 ### Setup
-* Fork, Clone, yarn install, yarn start
-* Do Not use the instructions as your guide for what code to type, use the reference guide project (address book)
+*- Fork, Clone, yarn install, yarn start
+*- Do Not use the instructions as your guide for what code to type, use the reference guide project (address book)
 
 ### Use local api
 * http://localhost:4000/products
@@ -47,30 +47,30 @@
 * createProduct(product)
    * return a thunk function
    * make a fetch call to /products as a POST
-   * include the product in the body 
+   * include the product in the body
    * in the first then, dispatch to loadProducts
 
 * createContact(contact)
    * return a thunk function
    * make a fetch call to /contacts as a POST
-   * include the contact in the body 
+   * include the contact in the body
    * in the first then, dispatch to loadContacts
 
 * createComment(comment)
    * return a thunk function
    * make a fetch call to /comments as a POST
-   * include the comment in the body 
+   * include the comment in the body
    * in the first then, dispatch to loadComments
 
 * createVehicle(vehicle)
    * return a thunk function
    * make a fetch call to /vehicles as a POST
-   * include the vehicle in the body 
+   * include the vehicle in the body
    * in the first then, dispatch to loadVehicles
 
 ### Create reducers in reducers/index.js
 * Create reducers based on the state in state.js
-* Determine which action the reducers should care about 
+* Determine which action the reducers should care about
 * return the appropriate value
 
 ### AppContainer
@@ -95,6 +95,3 @@
 * Create new vehicle shows up in list - 10
 * Create new comment shows up in list - 10
 * Create new product shows up in list - 10
-
-
-
