@@ -69,11 +69,11 @@ export function createComment(comment) {
 
 export function loadComments() {
   return (dispatch) => {
-    dispatch({type: "LOAD_CONTACTS"});
+    dispatch({type: "LOAD_COMMENTS"});
 
     fetch('/comments')
     .then(res => res.json())
-    .then(json => dispatch(contactsLoaded(json)))
+    .then(json => dispatch(commentsLoaded(json)))
     .catch(err => console.log(err));
   }
 }
