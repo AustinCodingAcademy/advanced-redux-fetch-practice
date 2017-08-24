@@ -7,13 +7,23 @@ import CommentsContainer from "./containers/CommentsContainer";
 import CreateThingsContainer from "./containers/CreateThingsContainer";
 class App extends Component {
   constructor() {
+    debugger;
     super();
     this.state = {users: []};
   }
   componentDidMount() {
-
+    debugger;
+    this.props.loadVehicles();
+    this.props.loadContacts();
+    this.props.loadProducts();
+    this.props.loadComments();
   }
+
+
+
+
   render() {
+    debugger;
     return (
       <div>
         <div style={{float: "left", width: "49%"}}>
@@ -33,6 +43,4 @@ class App extends Component {
     );
   }
 }
-export default (App);
-
-
+export default App;
