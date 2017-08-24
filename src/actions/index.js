@@ -5,7 +5,7 @@ export function createContact(contact) {
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify(contact)
     })
-    .then(() => dispatch(loadContacts));
+    .then(() => dispatch(loadContacts()));
   }
 }
 
@@ -34,7 +34,7 @@ export function createVehicle(vehicle) {
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify(vehicle)
     })
-    .then(() => dispatch(loadVehicles));
+    .then(() => dispatch(loadVehicles()));
   }
 }
 
@@ -63,7 +63,7 @@ export function createComment(comment) {
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify(comment)
     })
-    .then(() => dispatch(loadComments));
+    .then(() => dispatch(loadComments()));
   }
 }
 
