@@ -1,10 +1,38 @@
 import {combineReducers} from "redux";
 
-function comments(state = [], action) {
-  return state;
+function contacts(state = [], action) {
+  return (
+    action.type === "CONTACTS_LOADED" ?
+    action.value :
+    state
+  );
 }
 
-const rootReducer = combineReducers({
-  comments
+function comments(state = [], action) {
+  return (
+    action.type === "COMMENTS_LOADED" ?
+    action.value :
+    state
+  );
+}
+
+function products(state = [], action) {
+  return (
+    action.type === "PRODUCTS_LOADED" ?
+    action.value :
+    state
+  );
+}
+
+function vehicles(state = [], action) {
+  return (
+    action.type === "VEHICLES_LOADED" ?
+    action.value :
+    state
+  );
+}
+
+export default combineReducers({
+  contacts, comments, products, vehicles
 });
-export default rootReducer;
+
