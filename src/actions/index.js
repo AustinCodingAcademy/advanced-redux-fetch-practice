@@ -71,7 +71,7 @@ export function loadProducts() {
         type: "LOAD_PRODUCTS"
       });
   
-      fetch("/comments")
+      fetch("/products")
       .then( (response) => {
         return response.json();
       }).then((products) => {
@@ -89,7 +89,7 @@ export function productsLoaded(products) {
 
 // CREATE FUNCTIONS
 
-function createProduct(product) {
+export function createProduct(product) {
     return function (dispatch) {
         fetch("/products", {
         method: "POST",
@@ -108,7 +108,7 @@ function createProduct(product) {
     };
 }  
 
-function createContact(contact) {
+export function createContact(contact) {
     return function (dispatch) {
         fetch("/contacts", {
         method: "POST",
@@ -125,7 +125,7 @@ function createContact(contact) {
     };
 } 
 
-function createComment(comment) {
+export function createComment(comment) {
     return function (dispatch) {
         fetch("/comments", {
         method: "POST",
@@ -142,9 +142,9 @@ function createComment(comment) {
     };
 }  
 
-function createVehicle(vehicle) {
+export function createVehicle(vehicle) {
     return function (dispatch) {
-        fetch("/comments", {
+        fetch("/vehicles", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
