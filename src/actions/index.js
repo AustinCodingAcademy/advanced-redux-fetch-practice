@@ -60,7 +60,7 @@ export function loadComments() {
 
 export function commentsLoaded(comments) {
     return {
-      type: "COMMENT_LOADED",
+      type: "COMMENTS_LOADED",
       value: comments
     };
 }
@@ -68,7 +68,7 @@ export function commentsLoaded(comments) {
 export function loadProducts() {
     return function (dispatch) {
       dispatch({
-        type: "LOAD_COMMENTS"
+        type: "LOAD_PRODUCTS"
       });
   
       fetch("/comments")
@@ -82,7 +82,7 @@ export function loadProducts() {
 
 export function productsLoaded(products) {
     return {
-      type: "PRODUCT_LOADED",
+      type: "PRODUCTS_LOADED",
       value: products
     };
 }

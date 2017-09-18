@@ -69,9 +69,9 @@ DONE * createVehicle(vehicle)
    * in the first then, dispatch to loadVehicles
 
 ### Create reducers in reducers/index.js
-* Create reducers based on the state in state.js
-* Determine which action the reducers should care about 
-* return the appropriate value
+DONE * Create reducers based on the state in state.js
+DONE * Determine which action the reducers should care about 
+DONE * return the appropriate value
 
 ### AppContainer
 * In AppContainer.js
