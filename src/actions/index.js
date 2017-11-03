@@ -1,3 +1,4 @@
+
 export function loadContacts() {
     return function (dispatch){
         dispatch({
@@ -13,7 +14,7 @@ export function loadContacts() {
     }
 }
 
-export function loadedContacts(contacts) {
+export function contactsLoaded(contacts) {
     return {
         type: "CONTACTS_LOADED",
         value: contacts
@@ -25,7 +26,7 @@ export function createContact(contact){
         fetch("/contacts", {
             method: "POST",
             headers: {"content-Type": "application/json"},
-            body: JSON.stringify(product)
+            body: JSON.stringify(contact)
         }).then(() => dispatch(loadContacts()));
     }
 } 
@@ -45,17 +46,27 @@ export function loadVehicles(){
     }
 }
 
-export function loadedVehicles(vehicles) {
+export function vehiclesLoaded(vehicles) {
     return {
         type: "VEHICLES_LOADED",
         value: vehicles
     };
 }
 
+export function createVehicle(vehicle){
+    return function (dispatch){
+        fetch("/vehicles", {
+            method: "POST",
+            headers: {"content-Type": "application/json"},
+            body: JSON.stringify(vehicle)            
+        }).then(() => dispatch(loadVehicles()));
+    }
+}
+
 
 export function loadComments(){
     return function (dispatch){
-        disaptch({
+        dispatch({
             type: "LOAD_COMMENTS"
         });
         fetch("/comments")
