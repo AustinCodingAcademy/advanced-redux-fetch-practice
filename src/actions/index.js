@@ -20,6 +20,16 @@ export function loadedContacts(contacts) {
     };
 }
 
+export function createContact(contact){
+    return function (dispatch){
+        fetch("/contacts", {
+            method: "POST",
+            headers: {"content-Type": "application/json"},
+            body: JSON.stringify(product)
+        }).then(() => dispatch(loadContacts()));
+    }
+} 
+
 export function loadVehicles(){
     return function (dispatch){
         dispatch({
@@ -65,4 +75,45 @@ export function commentsLoaded(comments){
     };
 }
 
+export function createComment(comment){
+    return function (dispatch){
+        fetch("/comments", {
+            method: "POST",
+            headers: {"content-Type": "application/json"},
+            body: JSON.stringify(comment)
+        }).then(() => dispatch(loadComments()))
+    }
+}
 
+
+export function loadProducts(){
+    return function (dispatch){
+        dispatch({
+            type: "LOAD_PRODUCTS"           
+        });
+        fetch("/products")
+        .then((response) => {
+            return response.json();
+        })
+        .then((products) => {
+            dispatch(productsLoaded(products));
+        })
+    }   
+}
+
+export function productsLoaded(products){
+    return {
+        type: "PRODUCTS_LOADED",
+        value: products
+    };
+}
+
+export function createProduct(product){
+    return function (dispatch){
+        fetch("/products", {
+            method: "POST",
+            headers: {"Content-Type": "application.json"},
+            body: JSON.stringify(product)
+        }).then(() => dispatch(loadProducts()));
+    }
+}
