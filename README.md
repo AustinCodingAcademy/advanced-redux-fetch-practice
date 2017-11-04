@@ -11,79 +11,90 @@
 
 ### Create actions in actions/index.js to retrieve data
 * loadContacts
-    * return a thunk function
-    * make a fetch call to /contacts
-    * in the second then, dispatch to contactsLoaded
+    X return a thunk function
+    X make a fetch call to /contacts
+  X in the second then, dispatch to contactsLoaded
+
 * contactsLoaded(contacts)
-    * return an action
-    * type is “CONTACTS_LOADED”
-    * value is contacts
+    X return an action
+    X type is “CONTACTS_LOADED”
+    X value is contacts
+
 * loadVehicles
-    * return a thunk function
-    * make a fetch call to /vehicles
-    * in the second then, dispatch to vehiclesLoaded
+    X return a thunk function
+    X make a fetch call to /vehicles
+    X in the second then,
+    dispatch to vehiclesLoaded
+
 * vehiclesLoaded(vehicles)
-    * return an action
-    * type is “VEHICLES_LOADED”
-    * value is vehicles
+    X return an action
+    X type is “VEHICLES_LOADED”
+    X value is vehicles
+
 * loadComments
-    * return a thunk function
-    * make a fetch call to /comments
-    * in the second then, dispatch to commentsLoaded
+    X return a thunk function
+    X make a fetch call to /comments
+    X in the second then, dispatch to commentsLoaded
+
 * commentsLoaded(comments)
-    * return an action
-    * type is “COMMENTS_LOADED”
-    * value is comments
+    X return an action
+    X type is “COMMENTS_LOADED”
+    X value is comments
+
 * loadProducts
-    * return a thunk function
-    * make a fetch call to /products
-    * in the second then, dispatch to productsLoaded
+    X return a thunk function
+    X make a fetch call to /products
+    X in the second then, dispatch to productsLoaded
+
 * productsLoaded(products)
-    * return an action
-    * type is “PRODUCTS_LOADED”
-    * value is products
+    X return an action
+    X type is “PRODUCTS_LOADED”
+    X value is products
 
 ### Create actions in actions/index.js to create data
-* createProduct(product)
-   * return a thunk function
-   * make a fetch call to /products as a POST
-   * include the product in the body 
-   * in the first then, dispatch to loadProducts
+X createProduct(product)
+  X return a thunk function
+  X make a fetch call to /products as a POST
+   X include the product in the body
+   X in the first then, dispatch to loadProducts
 
 * createContact(contact)
-   * return a thunk function
-   * make a fetch call to /contacts as a POST
-   * include the contact in the body 
-   * in the first then, dispatch to loadContacts
+   X return a thunk function
+   X make a fetch call to /contacts as a POST
+   X include the contact in the body
+   X in the first then, dispatch to loadContacts
 
 * createComment(comment)
-   * return a thunk function
-   * make a fetch call to /comments as a POST
-   * include the comment in the body 
-   * in the first then, dispatch to loadComments
+   X return a thunk function
+   X make a fetch call to /comments as a POST
+   X include the comment in the body
+   X in the first then, dispatch to loadComments
 
 * createVehicle(vehicle)
-   * return a thunk function
-   * make a fetch call to /vehicles as a POST
-   * include the vehicle in the body 
-   * in the first then, dispatch to loadVehicles
+   X return a thunk function
+   X make a fetch call to /vehicles as a POST
+   X include the vehicle in the body
+   X in the first then, dispatch to loadVehicles
 
 ### Create reducers in reducers/index.js
-* Create reducers based on the state in state.js
-* Determine which action the reducers should care about 
-* return the appropriate value
+X Create reducers based on the state in state.js
+X Determine which action the reducers should care about
+X return the appropriate value
 
 ### AppContainer
-* In AppContainer.js
-* Import connect
-* Import actions loadContacts, loadVehicles, loadComments, loadProducts
-* mapDispatchToProps for these actions to props of the same name
-* Connect and export
-* Remember how to use connect when there is no mapStateToProps
+X In AppContainer.js
+X Import connect
+X Import actions loadContacts, loadVehicles, loadComments, loadProducts
+
+X mapDispatchToProps for these actions to props of the same name
+
+X Connect and export
+
+X Remember how to use connect when there is no mapStateToProps
 
 ### App
-* In App.js
-* call loadContacts, loadVehicles,loadComments,loadProducts in componentDidMount
+X In App.js
+X call loadContacts, loadVehicles,loadComments,loadProducts in componentDidMount
 
 ### Points
 * Base points - 20
@@ -95,6 +106,3 @@
 * Create new vehicle shows up in list - 10
 * Create new comment shows up in list - 10
 * Create new product shows up in list - 10
-
-
-
