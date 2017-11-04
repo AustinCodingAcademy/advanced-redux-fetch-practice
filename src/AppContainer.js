@@ -9,13 +9,14 @@ import loadVehicles from "./actions";
 
 function mapDispatchToProps(dispatch) {
   return {
+
     comments: function(){
       let action = loadComments;
-      dispatch(action)
+      dispatch(action);
     },
     contacts: function(){
       let action = loadContacts;
-      dispatch(action)
+      dispatch(action);
     },
     products: function(){
       let action = loadProducts;
