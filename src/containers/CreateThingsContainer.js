@@ -20,7 +20,7 @@ function mapDispatchToProps(dispatch) {
     },
     createComment: function (c) {
       dispatch(createComment(c));
-    },
+    }
   };
 }
 
