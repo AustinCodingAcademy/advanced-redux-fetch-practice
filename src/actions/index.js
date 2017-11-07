@@ -1,0 +1,152 @@
+// This is the code section for contacts
+export function loadContacts() {
+ return function (dispatch) {
+   dispatch({
+     type: "LOAD_CONTACTS"
+   });
+
+   fetch("http://localhost:4001/contacts")
+   .then( (response) => {
+     return response.json();
+   }).then((contacts) => {
+     dispatch(contactsLoaded(contacts));
+   });
+ };
+}
+
+export function contactsLoaded(contacts) {
+ return {
+   type: "CONTACTS_LOADED",
+   value: contacts
+ };
+}
+
+// This is the code section for Vehicles
+export function loadVehicles() {
+ return function (dispatch) {
+   dispatch({
+     type: "LOAD_VEHICLES"
+   });
+   fetch("http://localhost:4001/vehicles")
+   .then( (response) => {
+     return response.json();
+   }).then((vehicles) => {
+     dispatch(vehiclesLoaded(vehicles));
+   });
+ };
+}
+
+export function vehiclesLoaded(vehicles) {
+ return {
+   type: "VEHICLES_LOADED",
+   value: vehicles
+ };
+}
+
+// This is the code section for Comments
+export function loadComments() {
+ return function (dispatch) {
+   dispatch({
+     type: "LOAD_COMMENTS"
+   });
+   fetch("http://localhost:4001/comments")
+   .then( (response) => {
+     return response.json();
+   }).then((comments) => {
+     dispatch(commentsLoaded(comments));
+   });
+ };
+}
+
+export function commentsLoaded(comments) {
+ return {
+   type: "COMMENTS_LOADED",
+   value: comments
+ };
+}
+
+// This is the code section for Products
+export function loadProducts() {
+ return function (dispatch) {
+   dispatch({
+     type: "LOAD_PRODUCTS"
+   });
+   fetch("http://localhost:4001/products")
+   .then( (response) => {
+     return response.json();
+   }).then((products) => {
+     dispatch(productsLoaded(products));
+   });
+ };
+}
+
+export function productsLoaded(products) {
+ return {
+   type: "PRODUCTS_LOADED",
+   value: products
+ };
+}
+
+//Create Product
+export function createProduct(product) {
+  return function(dispatch) {
+    fetch("/products", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(product)
+    })
+    .then((response) => {
+      dispatch(loadProducts());
+    });
+  };
+}
+
+// Create Contacts
+export function createContact(contact) {
+  return function(dispatch) {
+    fetch("/contacts", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(contact)
+    })
+    .then((response) => {
+      dispatch(loadContacts());
+    });
+  };
+}
+
+//Create Comment
+export function createComment(comment) {
+  return function(dispatch) {
+    fetch("/comments", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(comment)
+    })
+    .then((response) => {
+      dispatch(loadComments());
+    });
+  };
+}
+
+//Create vehicles
+export function createVehicle(vehicle) {
+  return function(dispatch) {
+    fetch("/vehicles", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(vehicle)
+    })
+    .then((response) => {
+      dispatch(loadVehicles());
+    });
+  };
+}
