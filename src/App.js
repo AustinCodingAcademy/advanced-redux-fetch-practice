@@ -8,19 +8,20 @@ import CreateThingsContainer from "./containers/CreateThingsContainer";
 
 
 
+
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {users: []};
   }
   componentDidMount() {
-    this.props.loadContacts;
-    this.props.loadComments;
-    this.props.loadProducts;
-    this.props.loadVehicles;
+      this.props.contacts();
+      this.props.comments();
+      this.props.products();
+      this.props.vehicles();
   }
   render() {
-    console.log(this.props);
+    console.log(this.props.loadContacts);
     return (
       <div>
         <div style={{float: "left", width: "49%"}}>
