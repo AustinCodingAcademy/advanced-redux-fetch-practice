@@ -1,30 +1,37 @@
 import { combineReducers } from 'redux';
-function newComments(state = 0, action) {
+
+function comments(state = [], action) {
+  if (action.type === 'COMMENTS_LOADED') {
+    return action.value;
+  }
   return state;
 }
 
-function newTasks(state = 0, action) {
+function products(state = [], action) {
+  if (action.type === 'PRODUCTS_LOADED') {
+    return action.value;
+  }
   return state;
 }
 
-function newOrders(state = 0, action) {
+function contacts(state = [], action) {
+  if (action.type === 'CONTACTS_LOADED') {
+    return action.value;
+  }
   return state;
 }
-function tickets(state = 0, action) {
+
+function vehicles(state = [], action) {
+  if (action.type === 'VEHICLES_LOADED') {
+    return action.value;
+  }
   return state;
 }
-function tasks(state = [], action) {
-  return state;
-}
-function orders(state = 0, action) {
-  return state;
-}
+
 const rootReducer = combineReducers({
-  newComments,
-  newTasks,
-  newOrders,
-  tickets,
-  orders,
-  tasks
+  comments,
+  products,
+  contacts,
+  vehicles
 });
 export default rootReducer;
