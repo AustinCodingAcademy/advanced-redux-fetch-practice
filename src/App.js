@@ -5,8 +5,9 @@ import ProductsContainer from "./containers/ProductsContainer";
 import VehiclesContainer from "./containers/VehiclesContainer";
 import CommentsContainer from "./containers/CommentsContainer";
 import CreateThingsContainer from "./containers/CreateThingsContainer";
-import { loadContacts } from "./actions";
+import { loadContacts, loadProducts, loadVehicles, loadComments } from "./actions";
 import { connect } from "react-redux";
+// import AppContainer from "./AppContainer"
 
 
 class App extends Component {
@@ -17,7 +18,10 @@ class App extends Component {
   componentDidMount() {
 
     this.props.loadContacts();
-    
+    this.props.loadProducts();
+    this.props.loadVehicles();
+    this.props.loadComments();
+
   }
 
   render() {
@@ -45,7 +49,16 @@ function mapDispatchToProps(dispatch) {
   return {
     loadContacts: function(contacts){
       dispatch(loadContacts(contacts))
-    }
+    },
+    loadProducts: function(products){
+      dispatch(loadProducts(products))
+    },
+    loadVehicles: function(vehicles){
+      dispatch(loadVehicles(vehicles))
+    },
+    loadComments: function(comments){
+      dispatch(loadComments(comments))
+    },
   }
 }
 
@@ -53,4 +66,4 @@ function mapDispatchToProps(dispatch) {
 
 export default connect(null, mapDispatchToProps)(App);
 
-
+// export default App;
