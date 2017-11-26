@@ -5,14 +5,21 @@ import ProductsContainer from "./containers/ProductsContainer";
 import VehiclesContainer from "./containers/VehiclesContainer";
 import CommentsContainer from "./containers/CommentsContainer";
 import CreateThingsContainer from "./containers/CreateThingsContainer";
+import { loadContacts } from "./actions";
+import { connect } from "react-redux";
+
+
 class App extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {users: []};
   }
   componentDidMount() {
 
+    this.props.loadContacts();
+    
   }
+
   render() {
     return (
       <div>
@@ -33,6 +40,17 @@ class App extends Component {
     );
   }
 }
-export default (App);
+
+function mapDispatchToProps(dispatch) {
+  return {
+    loadContacts: function(contacts){
+      dispatch(loadContacts(contacts))
+    }
+  }
+}
+
+
+
+export default connect(null, mapDispatchToProps)(App);
 
 
