@@ -9,7 +9,7 @@ export function loadContacts() {
     dispatch({
       type: "LOAD_CONTACTS"
     });
-    fetch("/contacts").then((response) => {
+    fetch("http://localhost:4001/contacts").then((response) => {
       return response.json();
     }).then((contacts) => {
       dispatch(contactsLoaded(contacts));
@@ -29,7 +29,7 @@ export function loadVehicles() {
     dispatch({
       type: "LOAD_VEHICLES"
     });
-    fetch("/vehicles").then((response) => {
+    fetch("http://localhost:4001/vehicles").then((response) => {
       return response.json();
     }).then((vehicles) => {
       dispatch(vehiclesLoaded(vehicles));
@@ -49,7 +49,7 @@ export function loadComments() {
     dispatch({
       type: "LOAD_COMMENTS"
     });
-    fetch("/comments").then((response) => {
+    fetch("http://localhost:4001/comments").then((response) => {
       return response.json();
     }).then((comments) => {
       dispatch(commentsLoaded(comments));
@@ -69,7 +69,7 @@ export function loadProducts() {
     dispatch({
       type: "LOAD_PRODUCTS"
     });
-    fetch("/products").then((response) => {
+    fetch("http://localhost:4001/products").then((response) => {
       return response.json();
     }).then((products) => {
       dispatch(productsLoaded(products));
@@ -88,7 +88,7 @@ export function productsLoaded(products){
 // create actions to generate all the data
 export function createProduct(product){
   return function(dispatch) {
-    fetch("/products", {
+    fetch("http://localhost:4001/products", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -103,7 +103,7 @@ export function createProduct(product){
 
 export function createContact(contact) {
   return function(dispatch) {
-    fetch("/contacts", {
+    fetch("http://localhost:4001/contacts", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -118,7 +118,7 @@ export function createContact(contact) {
 
 export function createComment(comment) {
   return function(dispatch) {
-    fetch("/comments", {
+    fetch("http://localhost:4001/comments", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -133,7 +133,7 @@ export function createComment(comment) {
 
 export function createVehicle(vehicle) {
   return function(dispatch) {
-    fetch("/vheicles", {
+    fetch("http://localhost:4001/vehicles", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
