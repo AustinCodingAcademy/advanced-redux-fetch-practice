@@ -25,7 +25,7 @@ class CreateThings extends React.Component {
   }
   render() {
     return (
-      <div>
+      <div className="flex" >
         <div>
           <h1>Comments</h1>
           <form onSubmit={(e) => {
