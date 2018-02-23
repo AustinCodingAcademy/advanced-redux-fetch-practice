@@ -27,7 +27,7 @@ export function createContact(contact){
    },
    body: JSON.stringify(contact)
  }).then(() => {
-   //The fetch call is done
+   loadContacts();
  });
 }
 
@@ -60,7 +60,7 @@ export function createVehicle(vehicle){
    },
    body: JSON.stringify(vehicle)
  }).then(() => {
-   //The fetch call is done
+   loadVehicles();
  });
 }
 
@@ -86,15 +86,17 @@ export function commentsLoaded(comments){
 }
 
 export function createComment(comment){
-  const webRequestPromise = fetch("/comments", {
-   method: "POST",
-   headers: {
-     "Content-Type": "application/json"
-   },
-   body: JSON.stringify(comment)
- }).then(() => {
-   //The fetch call is done
- });
+  return function (dispatch) {
+    const webRequestPromise = fetch("/comments", {
+     method: "POST",
+     headers: {
+       "Content-Type": "application/json"
+     },
+     body: JSON.stringify(comment)
+   }).then(() => {
+     dispatch(loadComments());
+   });
+  };
 }
 
 export function loadProducts() {
@@ -126,6 +128,6 @@ export function createProduct(product){
    },
    body: JSON.stringify(product)
  }).then(() => {
-   //The fetch call is done
+   loadProducts();
  });
 }
