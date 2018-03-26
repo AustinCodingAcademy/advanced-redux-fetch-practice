@@ -9,7 +9,7 @@
 * http://localhost:4001/comments
 
 
-### Create actions in actions/index.js to retrieve data
+### Create actions in actions/index.js to retrieve data --
 * loadContacts
     * return a thunk function
     * make a fetch call to /contacts
@@ -18,6 +18,7 @@
     * return an action
     * type is “CONTACTS_LOADED”
     * value is contacts
+
 * loadVehicles
     * return a thunk function
     * make a fetch call to /vehicles
@@ -26,6 +27,7 @@
     * return an action
     * type is “VEHICLES_LOADED”
     * value is vehicles
+
 * loadComments
     * return a thunk function
     * make a fetch call to /comments
@@ -34,6 +36,7 @@
     * return an action
     * type is “COMMENTS_LOADED”
     * value is comments
+
 * loadProducts
     * return a thunk function
     * make a fetch call to /products
@@ -43,7 +46,7 @@
     * type is “PRODUCTS_LOADED”
     * value is products
 
-### Create actions in actions/index.js to create data
+### Create actions in actions/index.js to create data --
 * createProduct(product)
    * return a thunk function
    * make a fetch call to /products as a POST
@@ -68,12 +71,12 @@
    * include the vehicle in the body 
    * in the first then, dispatch to loadVehicles
 
-### Create reducers in reducers/index.js
+### Create reducers in reducers/index.js --
 * Create reducers based on the state in state.js
 * Determine which action the reducers should care about 
 * return the appropriate value
 
-### AppContainer
+### AppContainer --
 * In AppContainer.js
 * Import connect
 * Import actions loadContacts, loadVehicles, loadComments, loadProducts
@@ -81,7 +84,7 @@
 * Connect and export
 * Remember how to use connect when there is no mapStateToProps
 
-### App
+### App --
 * In App.js
 * call loadContacts, loadVehicles,loadComments,loadProducts in componentDidMount
 
