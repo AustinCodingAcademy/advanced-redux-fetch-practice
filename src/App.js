@@ -14,7 +14,9 @@ class App extends Component {
 
   componentDidMount() {
     this.props.loadProducts();
-    // this.props.loadComments();
+    this.props.loadComments();
+    this.props.loadContacts();
+    this.props.loadVehicles();
   }
 
   render() {
