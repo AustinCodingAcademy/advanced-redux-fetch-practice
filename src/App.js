@@ -5,13 +5,21 @@ import ProductsContainer from "./containers/ProductsContainer";
 import VehiclesContainer from "./containers/VehiclesContainer";
 import CommentsContainer from "./containers/CommentsContainer";
 import CreateThingsContainer from "./containers/CreateThingsContainer";
+
 class App extends Component {
   constructor() {
     super();
     this.state = {users: []};
   }
-  componentDidMount() {
 
+  // In App.js
+  // call loadContacts, loadVehicles,loadComments,loadProducts in componentDidMount
+
+  componentDidMount() {
+    this.props.loadProducts();
+    this.props.loadComments();
+    this.props.loadVehicles();
+    this.props.loadContacts();
   }
   render() {
     return (
