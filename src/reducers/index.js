@@ -1,10 +1,16 @@
-import {combineReducers} from "redux";
+import { combineReducers } from "redux";
 
 function comments(state = [], action) {
   return state;
 }
 
-const rootReducer = combineReducers({
-  comments
+function products(state = [], action) {
+  if (action.type == "PRODUCTS_LOADED") {
+    return action.value;
+  }
+  return state;
+}
+
+export default combineReducers({
+  comments, products
 });
-export default rootReducer;
