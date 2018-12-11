@@ -11,7 +11,8 @@ class App extends Component {
     this.state = {users: []};
   }
   componentDidMount() {
-
+    this.props.loadProducts();
+    
   }
   render() {
     return (
