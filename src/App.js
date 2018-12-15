@@ -8,10 +8,18 @@ import CreateThingsContainer from "./containers/CreateThingsContainer";
 class App extends Component {
   constructor() {
     super();
-    this.state = {users: []};
+    this.state = {
+      products: [],
+      contacts: [],
+      vehicles: [],
+      comments: []
+    };
   }
   componentDidMount() {
-
+    this.props.loadProducts();
+    this.props.loadContacts();
+    this.props.loadVehicles();
+    this.props.loadComments();
   }
   render() {
     return (
