@@ -19,7 +19,7 @@ function mapDispatchToProps(dispatch) {
       dispatch(loadComments());
     }
   };
- }
+}
 
  export default connect(null,mapDispatchToProps)(App);
  

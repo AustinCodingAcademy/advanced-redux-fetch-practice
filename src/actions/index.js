@@ -16,6 +16,16 @@ export function productsLoaded(products) {
   };
 }
 
+export function createProduct(product){
+  return function (dispatch){
+    fetch("/products", {
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify(product)
+    }).then(()=> dispatch(loadProducts()));
+  };
+}
+
 export function loadContacts(){
   return function (dispatch){
     fetch("/contacts")
@@ -31,6 +41,16 @@ export function contactsLoaded(contacts){
   return{
     type: "CONTACTS_LOADED",
     value: contacts
+  };
+}
+
+export function createContact(contact){
+  return function (dispatch){
+    fetch("/contacts", {
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify(contact)
+    }).then(()=> dispatch(loadContacts()));
   };
 }
 
@@ -52,6 +72,16 @@ export function vehiclesLoaded(vehicles){
   };
 }
 
+export function createVehicle(vehicle){
+  return function (dispatch){
+    fetch("/vehicles", {
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify(vehicle)
+    }).then(()=> dispatch(loadVehicles()));
+  };
+}
+
 export function loadComments(){
   return function (dispatch){
     fetch("/comments")
@@ -67,5 +97,15 @@ export function commentsLoaded(comments){
   return{
     type: "COMMENTS_LOADED",
     value: comments
+  };
+}
+
+export function createComment(comment){
+  return function (dispatch){
+    fetch("/comments", {
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify(comment)
+    }).then(()=> dispatch(loadComments()));
   };
 }
