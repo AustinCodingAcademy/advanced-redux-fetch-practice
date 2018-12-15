@@ -5,13 +5,26 @@ import ProductsContainer from "./containers/ProductsContainer";
 import VehiclesContainer from "./containers/VehiclesContainer";
 import CommentsContainer from "./containers/CommentsContainer";
 import CreateThingsContainer from "./containers/CreateThingsContainer";
+//import {getData} from "api";
+
+
+
 class App extends Component {
   constructor() {
     super();
-    this.state = {users: []};
+    this.state = {
+      products: [],
+      comments: [],
+      vehicles: [],
+      contacts: []
+      };
   }
   componentDidMount() {
-
+    //loadProducts();
+    this.props.loadProducts();
+    this.props.loadComments();
+    this.props.loadVehicles();
+    this.props.loadContacts();
   }
   render() {
     return (
@@ -33,6 +46,8 @@ class App extends Component {
     );
   }
 }
-export default (App);
 
+//mapDispatchToProps is how you call the loadProducts
+
+export default (App);
 
