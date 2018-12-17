@@ -5,13 +5,18 @@ import ProductsContainer from "./containers/ProductsContainer";
 import VehiclesContainer from "./containers/VehiclesContainer";
 import CommentsContainer from "./containers/CommentsContainer";
 import CreateThingsContainer from "./containers/CreateThingsContainer";
+
 class App extends Component {
   constructor() {
     super();
     this.state = {users: []};
   }
+  //added products call in app need to add others loadComments etc.
   componentDidMount() {
-
+    this.props.loadProducts();
+    this.props.loadComments();
+    this.props.loadContacts();
+    this.props.loadVehicles();
   }
   render() {
     return (
@@ -33,6 +38,8 @@ class App extends Component {
     );
   }
 }
-export default (App);
+//add other actions below to connect...this should go in app container file to keep component pure
+export default App;
+
 
 
