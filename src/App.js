@@ -14,9 +14,9 @@ class App extends Component {
   //added products call in app need to add others loadComments etc.
   componentDidMount() {
     this.props.loadProducts();
-  //   this.props.loadComments();
-  //   this.props.loadContacts();
-  //   this.props.loadVehicles();
+    this.props.loadComments();
+    this.props.loadContacts();
+    this.props.loadVehicles();
   }
   render() {
     return (
