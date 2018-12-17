@@ -1,6 +1,9 @@
 import {combineReducers} from "redux";
 
 function comments(state = [], action) {
+  if(action.type === "COMMENTS_LOADED"){
+    return action.value;
+  }
   return state;
 }
 function products(state = [], action) {
