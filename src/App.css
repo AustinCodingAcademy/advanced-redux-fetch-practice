@@ -18,6 +18,29 @@
   font-size: large;
 }
 
+.wrap {
+  overflow: auto;
+  position: relative;
+}
+
+.create {
+  position: absolute;
+  left: 49%;
+  height: 100%;
+  width: 49%;
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+  justify-content: space-between;
+}
+
+.flex div {
+}
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
