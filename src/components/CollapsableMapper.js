@@ -3,8 +3,15 @@ import React, { Component } from "react";
 class CollapsableMapper extends Component {
   constructor() {
     super();
-    this.state = {visible: true};
+    this.state = {visible: null};
   }
+
+  componentDidMount() {
+    this.setState({visible: true})
+  };
+
+
+
   render() {
     let buttonText = "Hide";
     let userDivs = "";
@@ -38,6 +45,7 @@ class CollapsableMapper extends Component {
       </div>);
   }
 }
+
 
 
 export default CollapsableMapper;
